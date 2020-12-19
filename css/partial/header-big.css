@@ -1,0 +1,23 @@
+/*Call-to-action starts*/
+
+#call-to-action{
+	display: flex;
+	justify-content: space-around;
+	padding: 70px;
+	background-image: url("../../img/people-playing-vg-bg.jpg");
+	background-position: center;
+	min-height: 400px;
+}
+
+#left-header{
+	max-width: 600px;
+	flex-grow: 3;
+}
+
+#right-header{
+	flex-grow: 2;
+	text-align: center;
+}
+
+
+/*Call-to-action ends*/

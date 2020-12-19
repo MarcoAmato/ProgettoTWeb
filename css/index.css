@@ -1,8 +1,44 @@
-body{
-	background-color: #252525;
-	color: white;
+/*
+** Logo orange: rgb(254,78,1)
+** Logo yellow: rgb(249,165,5)
+*/
+
+/*Header starts*/
+
+#login-div{
+	padding: 30px 100px 30px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid rgb(254,78,1);
 }
 
-form #login-form{
-	color:red;
+#logo{
+	width: 350px;
+}
+
+#login-div input{
+	border: 2px solid white;
+	border-radius: 5px;
+	background-color: rgb(77, 73, 73);
+	font-family:"Segoe UI",Arial,sans-serif;
+	font-size: 12pt;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #C0C0C0;
+	height: 40px;
+}
+
+#login-div input::placeholder{
+	color: white
+}
+
+#login-div #button-accedi{
+	border: 1px solid rgb(254,78,1);
+}
+
+/*Header ends*/
+
+div#main{
+	padding: 0px 30px;
 }

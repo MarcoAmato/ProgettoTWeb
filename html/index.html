@@ -3,23 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Gamehub</title>
+	<link rel="stylesheet" href="../css/common.css">
 	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/partial/header-big.css">
 </head>
 <body>
 	
 	<header>
 		<!-- Logo e form di login -->
-		<div class="login">
-			<img src="../img/logo/logo (1)/logo_small.png" alt="logo">
+		<div id="login-div">
+			<img src="../img/logo/logo (1)/logo_small.png" alt="logo" id="logo">
 			<form action="login.html" id="login-form">
 				<input type="email" placeholder="Email" name="email" id="email">
 				<input type="password" placeholder="Password" name="password" id="password">
-				<input type="button" value="Accedi">
+				<input type="button" value="Accedi" id="button-accedi">
 			</form>
 		</div>
-
-		<div w3-include-html="./partial/header-big.html"></div>
 	</header>
+
+	<div w3-include-html="./partial/header-big.html"></div>
+
+	<div id="main"></div>
 
 	<script src="../js/include.js"></script>
 </body>
