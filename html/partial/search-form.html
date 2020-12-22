@@ -1,6 +1,6 @@
 <h2>Cosa cerchi?</h2>
 <form action="search.html">
-	<select name="piattaforma" id="piattaforma">
+	<select name="piattaforma" id="piattaforma" class="select-css">
 	<!-- Qui va fatta una richiestra ajax per trovare tutte le piattaforme presenti nel database
 	-- e creare le options associate -->
 		<option value="ps5">PS5</option>
@@ -8,6 +8,8 @@
 		<option value="xbox-series-x">XBox Series X</option>
 	</select>
 	<input type="text" name="luogo" id="luogo" placeholder="luogo">
-	<input type="submit"> <!-- Icona lente di ingrandimento cliccabile -->
+	<button value="Cerca" type="submit" id="search">
+		<img src="../../img/icons/lens.png" alt="Cerca">
+	</button> <!-- Icona lente di ingrandimento cliccabile -->
 	<!-- Possono essere aggiunti altri campi di ricerca -->
 </form>

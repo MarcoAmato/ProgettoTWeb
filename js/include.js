@@ -1,3 +1,11 @@
+/**
+ * !! This script should be called at the end of the page in order to 
+ * work. !!
+ * Assign a div the attribute "w3-include-html" and give it the value 
+ * of the relative path to the html script that shold be inserted
+ * inside the div. 
+ */
+
 function includeHTML() {
 	var z, i, elmnt, file, xhttp;
 	/* Loop through a collection of all HTML elements: */

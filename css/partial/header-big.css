@@ -19,5 +19,29 @@
 	text-align: center;
 }
 
+button#sign-up{
+	font-weight: bold;
+	border: 2px solid #00BFFF;
+	height: 50px;
+	font-size: 1.5em;
+	padding: 5px;
+}
+
+button#sign-up:hover{
+	color:#00BFFF;
+}
+
+button#search{
+	background-color: rgb(254,78,1);
+	width: 64px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+button#search img{
+	width:20px;
+	margin:auto;
+}
+
 
 /*Call-to-action ends*/

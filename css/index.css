@@ -6,35 +6,25 @@
 /*Header starts*/
 
 #login-div{
-	padding: 30px 100px 30px 100px;
+	padding: 10px 100px 10px 100px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 2px solid rgb(254,78,1);
+	flex-wrap: wrap;
 }
 
 #logo{
 	width: 350px;
 }
 
-#login-div input{
-	border: 2px solid white;
-	border-radius: 5px;
-	background-color: rgb(77, 73, 73);
-	font-family:"Segoe UI",Arial,sans-serif;
-	font-size: 12pt;
-	padding-left: 5px;
-	padding-right: 5px;
-	color: #C0C0C0;
-	height: 40px;
-}
-
-#login-div input::placeholder{
-	color: white
-}
-
 #login-div #button-accedi{
-	border: 1px solid rgb(254,78,1);
+	font-weight: bold;
+	border: 2px solid rgb(254,78,1);
+}
+
+#login-div #button-accedi:hover{
+	color:rgb(254,78,1);
 }
 
 /*Header ends*/
