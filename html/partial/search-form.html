@@ -1,13 +1,15 @@
 <h2>Cosa cerchi?</h2>
 <form action="search.html">
-	<select name="piattaforma" id="piattaforma" class="select-css">
+	<input type="text" name="nome" id="nome" placeholder="Nome del gioco" class="input-grey">
+	<select name="piattaforma" id="piattaforma" class="input-grey">
+		<option value="" disabled selected>Piattaforma...</option>
 	<!-- Qui va fatta una richiestra ajax per trovare tutte le piattaforme presenti nel database
 	-- e creare le options associate -->
 		<option value="ps5">PS5</option>
 		<option value="nintendo-switch">Nintendo Switch</option>
 		<option value="xbox-series-x">XBox Series X</option>
 	</select>
-	<input type="text" name="luogo" id="luogo" placeholder="luogo">
+	<input type="text" name="citta" id="citta" placeholder="Città" class="input-grey">
 	<button value="Cerca" type="submit" id="search">
 		<img src="../../img/icons/lens.png" alt="Cerca">
 	</button> <!-- Icona lente di ingrandimento cliccabile -->
