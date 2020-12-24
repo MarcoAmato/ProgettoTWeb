@@ -14,6 +14,10 @@
 	flex-grow: 3;
 }
 
+#left-header p{
+	font-size: 1.5em;
+}
+
 #right-header{
 	flex-grow: 2;
 	text-align: center;
