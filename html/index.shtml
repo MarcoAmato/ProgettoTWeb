@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<title>Gamehub</title>
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="stylesheet" href="../../css/index.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+	<header>
+		<!-- Logo e form di login -->
+		<div id="login-div">
+			<img src="../../img/logo/logo (1)/logo_small.png" alt="logo" id="logo">
+			<form action="login.html" id="login-form">
+				<input type="email" placeholder="Email" name="email" id="email" class="input-grey">
+				<input type="password" placeholder="Password" name="password" id="password" class="input-grey">
+				<input type="button" value="Accedi" class="input-grey" id="button-accedi">
+			</form>
+		</div>
+	</header>
+
+	<!--#include virtual="../partial/header-big.shtml" -->
+
+	<div id="main">
+		<section>
+			<h2>Come vendere giochi usati</h2>
+			<img src="../../img/icons/money.png" alt="Vendere giochi">
+			<p>Su gamehub puoi vendere i giochi che non usi più in pochi click. Questi sono i passi per poter iniziare a vendere su gamehub</p>
+			<ol>
+				<li>Iscriviti su Gamehub compilando il form qui sopra</li>
+				<li>Fai login inserendo i tuoi dati e cliccando "Accedi" in alto a destra</li>
+				<li>Accedi alla tua area personale cliccando l'icona utente in alto a destra</li>
+				<li>Clicca su "Inserisci un annucio"</li>
+				<li>Compila il form inserendo i dati dell'annuncio</li>
+				<li>Fai click su "Pubblica annuncio" e ... <span>benvenuto in gamehub!!!</span></li>
+			</ol>
+		</section>
+		<section>
+			<h2>Come comprare giochi usati</h2>
+			<img src="../../img/icons/happy.png" alt="Comprare giochi usati">
+			<ul>
+				<li>Cerca il gioco compilando il form di ricerca</li>
+				<li>Trova l'annuncio che fa per te e cliccaci sopra</li>
+				<li>Contatta il venditore e ... <span>benvenuto in gamehub!!!</span></li>
+			</ul>
+		</section>
+	</div>
+
+	<script src="../../js/index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
