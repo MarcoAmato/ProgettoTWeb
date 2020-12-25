@@ -1,6 +1,8 @@
 <!-- Remember to call the style of the component in the
 main html page ( css/partial/header-big.css ) -->
 
+<link rel="stylesheet" href="../../css/partial/header-big.css">
+
 <div id="call-to-action">
 	<div id="left-header">
 		<div>
@@ -12,5 +14,7 @@ main html page ( css/partial/header-big.css ) -->
 		</div>
 	</div>
 	
-	<div w3-include-html="./partial/search-form.html" id="right-header"></div>
+	<div id="right-header">
+		<!--#include virtual="./search-form.html" -->
+	</div>
 </div>
