@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../../css/index.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../../css/partial/header-big.css">
+	<link rel="stylesheet" href="../../css/partial/header.css">
 </head>
 <body>
 	
@@ -22,19 +22,3 @@
 			</form>
 		</div>
 	</header>
-
-	<div id="call-to-action">
-		<div id="left-header">
-			<div>
-				<h1>Gamehub, la migliore piattaforma per comprare e vendere videogiochi usati</h1>
-			</div>
-			<div>
-				<p>Entra a far parte della community</p>
-				<button id="sign-up" class="input-grey">Registrati</button>
-			</div>
-		</div>
-		
-		<div id="right-header">
-			<!--#include virtual="./search-form.html" -->
-		</div>
-	</div>

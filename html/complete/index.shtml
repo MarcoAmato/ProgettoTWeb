@@ -1,5 +1,21 @@
 
-	<!--#include virtual="../partial/header-index.shtml" -->
+	<!--#include virtual="../partial/header.shtml" -->
+
+	<div id="call-to-action">
+		<div id="left-header">
+			<div>
+				<h1>Gamehub, la migliore piattaforma per comprare e vendere videogiochi usati</h1>
+			</div>
+			<div>
+				<p>Entra a far parte della community</p>
+				<button id="sign-up" class="input-grey">Registrati</button>
+			</div>
+		</div>
+		
+		<div id="right-header">
+			<!--#include virtual="../partial/search-form.html" -->
+		</div>
+	</div>
 
 	<div id="main">
 		<section>
