@@ -21,6 +21,11 @@ body, select{
 	color: white
 }
 
+
+div#main{
+	padding: 0px 30px;
+}
+
 /*
 ** Select style start
 */
