@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<title>Gamehub</title>
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="stylesheet" href="../../css/index.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/partial/header-big.css">
+</head>
+<body>
+	
+	<header>
+		<!-- Logo e form di login -->
+		<div id="login-div">
+			<img src="../../img/logo/logo (1)/logo_small.png" alt="logo" id="logo">
+			<form action="login.html" id="login-form">
+				<input type="email" placeholder="Email" name="email" id="email" class="input-grey">
+				<input type="password" placeholder="Password" name="password" id="password" class="input-grey">
+				<input type="button" value="Accedi" class="input-grey" id="button-accedi">
+			</form>
+		</div>
+	</header>
+
+	<div id="call-to-action">
+		<div id="left-header">
+			<div>
+				<h1>Gamehub, la migliore piattaforma per comprare e vendere videogiochi usati</h1>
+			</div>
+			<div>
+				<p>Entra a far parte della community</p>
+				<button id="sign-up" class="input-grey">Registrati</button>
+			</div>
+		</div>
+		
+		<div id="right-header">
+			<!--#include virtual="./search-form.html" -->
+		</div>
+	</div>
