@@ -8,88 +8,25 @@
         <div id="advertisements">
             <div class="advert">
                 <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
+                <div>
+                    <h2>Dio</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
+                </div>
+                <img src="../../img/icons/empty_heart.png" alt="" class="heart">
             </div>
             <div class="advert">
                 <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
+                <div>
+                    <h2>Dio</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
+                </div>
+                <img src="../../img/icons/empty_heart.png" alt="" class="heart">
+            </div>
+            <div class="advert">
                 <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
-            </div><div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <h2></h2>
-                <p></p>
-                <img src="../../img/icons/empty_heart.png" alt="" class="empty_heart">
+                <div>
+                    <h2>Dio</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
+                </div>
+                <img src="../../img/icons/empty_heart.png" alt="" class="heart">
             </div>
