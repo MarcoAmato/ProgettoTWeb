@@ -1,11 +1,13 @@
     <!--#include virtual="../partial/header.shtml" -->
 
-    <!--#include virtual="../partial/search-form.html" -->
+    
 
     <div id="main">
-        <h1> God of Surbo - PS4 a Surbo</h1>
-        <p>50 Risultati (1-20)</p>
+        <!--#include virtual="../partial/search-form.html" -->
+
         <div id="advertisements">
+            <h1> God of Surbo - PS4 a Surbo</h1>
+            <p>50 Risultati (1-20)</p>
             <div class="advert">
                 <img src="../../img/god_of_war.jpeg" alt="">
                 <div>
@@ -30,3 +32,7 @@
                 </div>
                 <img src="../../img/icons/empty_heart.png" alt="" class="heart">
             </div>
+        </div>
+    </div>
+<!--#include virtual="../partial/footer.html" -->  
+

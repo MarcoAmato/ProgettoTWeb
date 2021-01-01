@@ -27,4 +27,39 @@
 	color:rgb(254,78,1);
 }
 
+#call-to-action{
+	display: flex;
+	justify-content: space-around;
+	padding: 70px;
+	background-image: url("../img/people-playing-vg-bg.jpg");
+	background-position: center;
+	min-height: 400px;
+}
+
+#left-header{
+	max-width: 600px;
+	flex-grow: 3;
+}
+
+#left-header p{
+	font-size: 1.5em;
+}
+
+#right-header{
+	flex-grow: 2;
+	text-align: center;
+}
+
+button#sign-up{
+	font-weight: bold;
+	border: 2px solid #00BFFF;
+	height: 50px;
+	font-size: 1.5em;
+	padding: 5px;
+}
+
+button#sign-up:hover{
+	color:#00BFFF;
+}
+
 /*Header ends*/
