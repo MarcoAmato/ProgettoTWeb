@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+}
+
+fieldset input,button{
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+fieldset{
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type="radio"]{
+    display: inline;
+}

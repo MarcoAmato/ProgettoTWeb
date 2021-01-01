@@ -5,6 +5,10 @@ body, select{
 	background-color: #252525;
 }
 
+button, input[type="button"]{
+	cursor: pointer;
+}
+
 .input-grey{
 	border: 1px solid white;
 	border-radius: 5px;

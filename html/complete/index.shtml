@@ -8,7 +8,7 @@
 			</div>
 			<div>
 				<p>Entra a far parte della community</p>
-				<button id="sign-up" class="input-grey">Registrati</button>
+				<a href="./sign-up.shtml"><button id="sign-up" class="input-grey">Registrati</button></a>
 			</div>
 		</div>
 		
