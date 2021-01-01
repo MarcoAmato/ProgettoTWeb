@@ -3,30 +3,6 @@
 ** Logo yellow: rgb(249,165,5)
 */
 
-/*Header starts*/
-
-#login-div{
-	padding: 10px 100px 10px 100px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 2px solid rgb(254,78,1);
-	flex-wrap: wrap;
-}
-
-#logo{
-	width: 350px;
-}
-
-#login-div #button-accedi{
-	font-weight: bold;
-	border: 2px solid rgb(254,78,1);
-}
-
-#login-div #button-accedi:hover{
-	color:rgb(254,78,1);
-}
-
 #call-to-action{
 	display: flex;
 	justify-content: space-around;
@@ -61,5 +37,3 @@ button#sign-up{
 button#sign-up:hover{
 	color:#00BFFF;
 }
-
-/*Header ends*/

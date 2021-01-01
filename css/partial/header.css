@@ -1,3 +1,27 @@
+/*Header starts*/
+
+#login-div{
+	padding: 10px 100px 10px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid rgb(254,78,1);
+	flex-wrap: wrap;
+}
+
+#logo{
+	width: 350px;
+}
+
+#login-div #button-accedi{
+	font-weight: bold;
+	border: 2px solid rgb(254,78,1);
+}
+
+#login-div #button-accedi:hover{
+	color:rgb(254,78,1);
+}
+
 button#search{
 	background-color: rgb(254,78,1);
 	width: 64px;
@@ -9,3 +33,5 @@ button#search img{
 	width:20px;
 	margin:auto;
 }
+
+/*Header ends*/
