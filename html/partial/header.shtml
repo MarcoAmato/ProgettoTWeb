@@ -20,4 +20,26 @@
 				<input type="button" value="Accedi" class="input-grey" id="button-accedi">
 			</form>
 		</div>
+
+		<div id="personal-area">
+			<div id="user-menu">
+				<img src="../../img/icons/user.png" alt="icona utente">
+				<p>Gianmarco.pisellino@giorgio.it</p>
+				<img src="../../img/icons/arrow-down.png" alt="">
+			</div>
+			<div id="personal-contents">
+				<div>
+					<img src="../../img/icons/advert.png" alt="annunci">
+					<p>I tuoi annunci</p>
+				</div>
+				<div>
+					<img src="../../img/icons/white-heart.png" alt="preferiti">
+					<p>Annunci preferiti</p>
+				</div>
+				<div>
+					<img src="../../img/icons/logout.png" alt="esci">
+					<p>Esci</p>
+				</div>
+			</div>
+		</div>
 	</header>
