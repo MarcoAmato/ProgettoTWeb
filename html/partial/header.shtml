@@ -11,9 +11,9 @@
 <body>
 	
 	<header>
-		<!-- Logo e form di login -->
+		<a href="./index.shtml"><img src="../../img/logo/logo (1)/logo_small.png" alt="logo" id="logo"></a>
+		<!-- form di login -->
 		<div id="login-div">
-			<a href="./index.shtml"><img src="../../img/logo/logo (1)/logo_small.png" alt="logo" id="logo"></a>
 			<form action="login.html" id="login-form">
 				<input type="email" placeholder="Email" name="email" id="email" class="input-grey">
 				<input type="password" placeholder="Password" name="password" id="password" class="input-grey">
@@ -24,22 +24,20 @@
 		<div id="personal-area">
 			<div id="user-menu">
 				<img src="../../img/icons/user.png" alt="icona utente">
-				<p>Gianmarco.pisellino@giorgio.it</p>
-				<img src="../../img/icons/arrow-down.png" alt="">
+				<span>Gianmarco.pisellino@giorgio.it</span>
+				<img src="../../img/icons/arrow-down.png" alt="" id="down-arrow">
 			</div>
-			<div id="personal-contents">
-				<div>
-					<img src="../../img/icons/advert.png" alt="annunci">
-					<p>I tuoi annunci</p>
-				</div>
-				<div>
-					<img src="../../img/icons/white-heart.png" alt="preferiti">
-					<p>Annunci preferiti</p>
-				</div>
-				<div>
-					<img src="../../img/icons/logout.png" alt="esci">
-					<p>Esci</p>
-				</div>
+			<div class="user-options">
+				<img src="../../img/icons/advert.png" alt="annunci">
+				<span>I tuoi annunci</span>
+			</div>
+			<div class="user-options">
+				<img src="../../img/icons/white-heart.png" alt="preferiti">
+				<span>Annunci preferiti</span>
+			</div>
+			<div class="user-options">
+				<img src="../../img/icons/logout.png" alt="esci">
+				<span>Esci</span>
 			</div>
 		</div>
 	</header>

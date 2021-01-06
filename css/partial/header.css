@@ -1,16 +1,20 @@
-/*Header starts*/
+/*Login bar start*/
 
-#login-div{
+header{
+	border-bottom: 2px solid rgb(254,78,1);
 	padding: 10px 100px 10px 100px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 2px solid rgb(254,78,1);
 	flex-wrap: wrap;
 }
 
 #logo{
 	width: 350px;
+}
+
+#login-div{
+	/* display: none; */
 }
 
 #login-div #button-accedi{
@@ -34,4 +38,47 @@ button#search img{
 	margin:auto;
 }
 
-/*Header ends*/
+/*Login bar ends*/
+
+/* #personal-area{
+	display: none;
+} */
+
+
+
+/*Personal bar starts*/
+
+#personal-area{
+	position: relative;
+	background-color: rgb(77, 73, 73);
+}
+
+#personal-area>div{
+	padding: 5px;
+}
+
+#personal-area>div>span{
+	margin-left: 3px;
+}
+
+#user-menu{
+	border: 2px solid rgb(168, 165, 165);
+}
+
+#user-menu>span{
+	margin-right: 3px;
+}
+
+.user-options{
+	display: none;
+}
+
+#personal-area img{
+	width: 25px;
+}
+
+img#down-arrow{
+	width: 15px;
+}
+
+/*Personal bar ends*/
