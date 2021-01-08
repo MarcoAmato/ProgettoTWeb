@@ -1,7 +1,8 @@
 $(function(){
-    $('user-menu').click(toggleOptions());
+    $('#user-menu').mouseover(function(){
+        $('.user-options').removeClass('hide');
+    });
+    $('#personal-area').mouseleave(function() {
+        $('.user-options').addClass('hide');
+    });
 })
-
-function toggleOptions(){
-
-}

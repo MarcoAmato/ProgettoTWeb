@@ -40,11 +40,6 @@ button#search img{
 
 /*Login bar ends*/
 
-/* #personal-area{
-	display: none;
-} */
-
-
 
 /*Personal bar starts*/
 
@@ -70,6 +65,10 @@ button#search img{
 }
 
 .user-options{
+	transition: display 2s;
+}
+
+.hide{
 	display: none;
 }
 
