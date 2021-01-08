@@ -45,14 +45,15 @@ button#search img{
 
 #personal-area{
 	position: relative;
+}
+
+#user-menu, #user-options-container div{
 	background-color: rgb(77, 73, 73);
+	width: 270px;
+	font-size: 12pt;
 }
 
-#personal-area>div{
-	padding: 5px;
-}
-
-#personal-area>div>span{
+#personal-area div>span{
 	margin-left: 3px;
 }
 
@@ -64,20 +65,32 @@ button#search img{
 	margin-right: 3px;
 }
 
+#user-options-container{
+	position: absolute;
+	top: 38px;
+	left: 2px;
+}
+
+#user-options-container a{
+	text-decoration: none;
+	color: white;
+}
+
 .user-options{
-	transition: display 2s;
+	padding: 5px;
 }
 
 .hide{
-	display: none;
+	visibility: hidden;
+	background-color: transparent;
 }
 
 #personal-area img{
-	width: 25px;
+	width: 20px;
 }
 
 img#down-arrow{
-	width: 15px;
+	width: 12px;
 }
 
 /*Personal bar ends*/

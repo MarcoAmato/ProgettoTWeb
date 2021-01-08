@@ -3,6 +3,6 @@ $(function(){
         $('.user-options').removeClass('hide');
     });
     $('#personal-area').mouseleave(function() {
-        $('.user-options').addClass('hide');
+        $('#user-options-container div').addClass('hide');
     });
 })

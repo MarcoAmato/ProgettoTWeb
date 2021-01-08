@@ -23,22 +23,36 @@
 		</div>
 
 		<div id="personal-area">
-			<div id="user-menu">
+			<div id="user-menu" class="user-options">
 				<img src="../../img/icons/user.png" alt="icona utente">
 				<span>Gianmarco.pisellino@giorgio.it</span>
 				<img src="../../img/icons/arrow-down.png" alt="" id="down-arrow">
 			</div>
-			<div class="user-options hide">
-				<img src="../../img/icons/advert.png" alt="annunci">
-				<span>I tuoi annunci</span>
-			</div>
-			<div class="user-options hide">
-				<img src="../../img/icons/white-heart.png" alt="preferiti">
-				<span>Annunci preferiti</span>
-			</div>
-			<div class="user-options hide">
-				<img src="../../img/icons/logout.png" alt="esci">
-				<span>Esci</span>
+			<div id="user-options-container">
+				<a href="#">
+					<div class="user-options hide">
+						<img src="../../img/icons/advert.png" alt="annunci">
+						<span>I tuoi annunci</span>
+					</div>
+				</a>
+				<a href="#">
+					<div class="user-options hide">
+						<img src="../../img/icons/plus.png" alt="nuovo">
+						<span>Inserisci un annucio</span>
+					</div>
+				</a>
+				<a href="#">
+					<div class="user-options hide">
+						<img src="../../img/icons/white-heart.png" alt="preferiti">
+						<span>Annunci preferiti</span>
+					</div>
+				</a>
+				<a href="#">
+					<div class="user-options hide">
+						<img src="../../img/icons/logout.png" alt="esci">
+						<span>Esci</span>
+					</div>
+				</a>
 			</div>
 		</div>
 	</header>
