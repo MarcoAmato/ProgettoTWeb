@@ -1,0 +1,33 @@
+    <!--#include virtual="../partial/header.shtml" -->
+    <link rel="stylesheet" href="../../css/sign-up.css">
+
+    <h1>Inserisci un annuncio</h1>
+    <form action="../../php/new-advert.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Inserisci i dati del gioco</legend>
+            
+            <label for="piattaforma">Inserisci la piattaforma</label>
+            <select name="piattaforma" id="piattaforma">
+                <option value="" disabled selected>Piattaforma...</option>
+            <!-- Qui va fatta una richiestra ajax per trovare tutte le piattaforme presenti nel database
+            -- e creare le options associate -->
+                <option value="all">Tutte le piattaforme</option>
+                <option value="ps5">PS5</option>
+                <option value="nintendo-switch">Nintendo Switch</option>
+                <option value="xbox-series-x">XBox Series X</option>
+            </select>
+            
+            <label for="immagine">Inserisci un'immagine (facoltativo)</label>
+            <input type="file" name="immagine" id="immagine">
+            
+            <label for="titolo">Titolo dell'annuncio</label>
+            <input type="text" name="titolo" id="titolo">
+            
+            <label for="testo">Testo dell'annuncio</label>
+            <textarea name="testo" id="testo" cols="30" rows="10" maxlength="300" placeholder="Inserisci il testo (Max 300 caratteri)"></textarea>
+
+            <button>Inserisci annuncio</button>
+        </fieldset>
+    </form>
+
+    <!--#include virtual="../partial/footer.html" -->  

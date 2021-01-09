@@ -2,9 +2,9 @@ h1{
     text-align: center;
 }
 
-fieldset input,button{
+fieldset input,button, select{
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 10px auto 10px auto;
 }
 
 fieldset{
