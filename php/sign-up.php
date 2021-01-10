@@ -35,5 +35,7 @@
 	$genere = $_GET['genere'];
 
 	$insert_query ="
+		INSERT INTO utenti (`email`,`password`,`data_di_nascita`,`genere`)
+		VALUES ('ciao@prova.com', 'pippoe&patatina', '1996/04/21', 'm');
 	"
 ?>
