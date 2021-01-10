@@ -2,27 +2,27 @@
     <link rel="stylesheet" href="../../css/sign-up.css">
 
     <h1>Registrati su GameHub</h1>
-    <form action="../../php/sign-up.php">
+    <form action="../../php/sign-up.php" method="GET">
         <fieldset>
             <legend>Crea un nuovo account</legend>
             
             <label for="email">La tua email</label>
-            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="email" name="email" id="email" placeholder="Email" required>
             
             <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
             
-            <label for="password">Ripeti la password</label>
-            <input type="password" name="password" id="password">
+            <label for="passwordR">Ripeti la password</label>
+            <input type="password" id="passwordR" required>
             
             <label for="nascita">Data di nascita</label>
-            <input type="date" name="nascita" id="nascita">
+            <input type="date" name="nascita" id="nascita" required>
             
             <label for="genereM">Maschio</label>
-            <input type="radio" name="genere" id="genereM" value="m">
+            <input type="radio" name="genere" id="genereM" value="m" required>
           
             <label for="genereF">Femmina</label>
-            <input type="radio" name="genere" id="genereF" value="f">
+            <input type="radio" name="genere" id="genereF" value="f" required>
 
             <button>Registrati</button>
         </fieldset>
