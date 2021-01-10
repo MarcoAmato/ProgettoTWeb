@@ -4,9 +4,13 @@ if(!isset($_SERVER["REQUEST_METHOD"]) || $_SERVER["REQUEST_METHOD"]!="POST"){
 }
 
 session_start();
+$jsonReturn = array("sessionOkay"=>"");
 if(isset($_SESSION['username'])){
-    return $_SESSION['username'];
+    $jsonReturn["username"] = $_SESSION['username'];
 }else{
-    return null;
+    $jsonReturn["username"] = null;
 }
+session_destroy();
+echo(json_encode($jsonReturn));
+exit;
 ?>

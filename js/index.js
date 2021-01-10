@@ -1,15 +1,20 @@
 $(function(){
+    console.log("nigga");
     $.post({
-        url: "../php/autentication.php",
+        url: "../../php/autentication.php",
         datatype: "json",
         success: showLoginFormOrPersonalArea
     });
 });
 
-function showLoginFormOrPersonalArea(json){
-    if(json == null){
+function showLoginFormOrPersonalArea(data){
+    let jsonData = JSON.parse(data);
+    console.log(jsonData.username);
+    if(jsonData.username === null){
         $("#personal-area").hide();
     }else{
-        $("#user-menu span").text(json);
+        $("#login-div").hide();
+        $("#user-menu span").text(jsonData.username);
+        //error feedback to add
     }
 }
