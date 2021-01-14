@@ -4,7 +4,7 @@ h1{
 
 fieldset input,button, select{
     display: block;
-    margin: 10px auto 10px auto;
+    margin: 0 auto;
 }
 
 fieldset{
@@ -12,6 +12,17 @@ fieldset{
     text-align: center;
     margin: 0 auto;
 }
+
+fieldset div{
+    margin-bottom: 10px;
+}
+
+fieldset div p{
+    margin: 0;
+    color: rgba(255, 0, 0, 0.623);
+    font-size: 15px;
+}
+
 
 input[type="radio"]{
     display: inline;

@@ -1,5 +1,5 @@
 <?php
-    $PATH_TO_REDIRECT = "../html/complete/sign-up.shtml"
+    $PATH_TO_REDIRECT = "../html/complete/sign-up.shtml";
 
     if(!isset($_SERVER["REQUEST_METHOD"]) || $_SERVER["REQUEST_METHOD"] != "GET"){
         header("HTTP/1.1 400 Invalid Request");

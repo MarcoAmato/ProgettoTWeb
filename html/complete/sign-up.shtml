@@ -6,25 +6,39 @@
         <fieldset>
             <legend>Crea un nuovo account</legend>
             
-            <label for="email">La tua email</label>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-            
-            <label for="passwordR">Ripeti la password</label>
-            <input type="password" id="passwordR" required>
-            
-            <label for="nascita">Data di nascita</label>
-            <input type="date" name="nascita" id="nascita" required>
-            
-            <label for="genereM">Maschio</label>
-            <input type="radio" name="genere" id="genereM" value="m" required>
-          
-            <label for="genereF">Femmina</label>
-            <input type="radio" name="genere" id="genereF" value="f" required>
+            <div>
+                <label for="email-log-up">La tua email</label>
+                <input type="email" name="email" id="email-log-up" placeholder="Email" required>
+            </div>
+
+            <div id="password-div">
+                <label for="password-log-up">Password</label>
+                <input type="password" name="password" id="password-log-up" required>
+                <p></p>
+            </div>
+
+            <div id="password-repeat-div">
+                <label for="passwordR">Ripeti la password</label>
+                <input type="password" id="passwordR" required>
+            </div>
+
+            <div id="nascita-div">
+                <label for="nascita">Data di nascita</label>
+                <input type="date" name="nascita" id="nascita" required>
+                <p>Prova</p>
+            </div>
+
+            <div>
+                <label for="genereM">Maschio</label>
+                <input type="radio" name="genere" id="genereM" value="m" required>
+              
+                <label for="genereF">Femmina</label>
+                <input type="radio" name="genere" id="genereF" value="f" required>
+            </div>
 
             <button>Registrati</button>
         </fieldset>
     </form>
+
+    <script src="../../js/sign-up.js"></script>
     <!--#include virtual="../partial/footer.html" -->  
