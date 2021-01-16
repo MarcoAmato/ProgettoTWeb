@@ -9,35 +9,74 @@
 
     session_start();
     if(isset($_SESSION['username'])){
-        header("Location: $PATH_TO_REDIRECT");
+        echo 'already logged';
+        session_destroy();
+        exit;
     }
 
     try{
         $db = dbconnect();
     }catch(PDOException $e){
-        redirectWithError($PATH_TO_REDIRECT, "server down");
+        echo "server down";
+        session_destroy();
+        exit;
     }
 
-    $email = $db->quote($_GET['email']);
-    $hashed_password = password_hash($db->quote($_GET['password']), PASSWORD_DEFAULT);
+    if(isset($_POST['email'])){
+        $email = $db->quote($_POST['email']); //errore qui
+    }else{
+        echo 'email missing';
+        session_destroy();
+        exit;
+    }
 
+    if(isset($_POST['password'])){
+        $password = $db->quote($_POST['password']);
+    }else{
+        echo "password missing";
+        session_destroy();
+        exit;
+    }
+    
     $select_user_from_password = "
     SELECT * 
     FROM utenti 
-    WHERE utenti.password = '$hashed_password'"
+    WHERE utenti.email = $email";
 
-    $result = $db->query($select_user_from_password);
-
-    if(!$result){
-        redirectWithError($PATH_TO_REDIRECT, "query failed");
+    $result = null;
+    try{
+        $result = $db->query($select_user_from_password);
+    }catch(Exception $e){
+        echo "query failed";
+        session_destroy();
+        exit;
     }
 
     $user = $result->fetch(PDO::FETCH_ASSOC);
 
     if(!$user){
-        redirectWithError($PATH_TO_REDIRECT, "user not found");
+        echo "user not found";
+        session_destroy();
+        exit;
+    }else{
+        if(!password_verify($password, $user['password'])){
+            echo "wrong password for user";
+            session_destroy();
+            exit;
+        }
     }
 
+    //If we arrive here everything is okay
+    //Setting session variables
+    $_SESSION['username'] = $user['email'];
+
+    $userToAssArray = array("username"=>$user['email']);
+
+    $userJSON = json_encode($userToAssArray);
+
+    echo $userJSON;
     //fai tornare alla pagina precedente con messaggio di successo nel caso in cui l'esecuzione del codice php arriva fino a qui
     //IDEA si può usare javascript per fare una richiesta asincrona quando viene cliccato il bottone accedi. Nel caso di utente non trovato si da errore e si aggiorna l'header tramite js, altrimenti, sempre con js si aggiorna l'header inserendo il login
+    session_destroy();
+    exit;
 ?>
