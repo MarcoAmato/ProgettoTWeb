@@ -26,5 +26,18 @@
     FROM utenti 
     WHERE utenti.password = '$hashed_password'"
 
+    $result = $db->query($select_user_from_password);
 
+    if(!$result){
+        redirectWithError($PATH_TO_REDIRECT, "query failed");
+    }
+
+    $user = $result->fetch(PDO::FETCH_ASSOC);
+
+    if(!$user){
+        redirectWithError($PATH_TO_REDIRECT, "user not found");
+    }
+
+    //fai tornare alla pagina precedente con messaggio di successo nel caso in cui l'esecuzione del codice php arriva fino a qui
+    //IDEA si può usare javascript per fare una richiesta asincrona quando viene cliccato il bottone accedi. Nel caso di utente non trovato si da errore e si aggiorna l'header tramite js, altrimenti, sempre con js si aggiorna l'header inserendo il login
 ?>
