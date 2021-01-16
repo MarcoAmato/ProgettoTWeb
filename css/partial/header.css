@@ -13,13 +13,13 @@ header{
 	width: 350px;
 }
 
-#login-div{
-	/* display: none; */
-}
-
 #login-div #button-accedi{
-	font-weight: bold;
+	font-weight: lighter;
+	font-size: larger;
+	height: 34px;
+	vertical-align: bottom;
 	border: 2px solid rgb(254,78,1);
+	cursor: pointer;
 }
 
 #login-div #button-accedi:hover{
