@@ -19,8 +19,12 @@
     }
 
     $email = $db->quote($_GET['email']);
-    $hashed_password = $db->hash('md5', $db->quote($_GET['password']));
+    $hashed_password = password_hash($db->quote($_GET['password']), PASSWORD_DEFAULT);
 
-    $select_user = ""
+    $select_user_from_password = "
+    SELECT * 
+    FROM utenti 
+    WHERE utenti.password = '$hashed_password'"
+
 
 ?>

@@ -30,7 +30,7 @@
 
     //compose query
     $email = $db->quote($_GET['email']);
-    $hashed_password = hash('md5', $db->quote($_GET['password']));
+    $hashed_password = password_hash($db->quote($_GET['password']), PASSWORD_DEFAULT);
 	$nascita = $_GET['nascita'];
 	$genere = $_GET['genere'];
 
