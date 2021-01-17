@@ -50,7 +50,7 @@
 					</div>
 				</a>
 				<a href="#">
-					<div class="user-options hide">
+					<div class="user-options hide" id="logout">
 						<img src="../../img/icons/logout.png" alt="esci">
 						<span>Esci</span>
 					</div>

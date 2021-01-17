@@ -13,14 +13,38 @@ $(function(){
     */
     $('#personal-area').mouseleave(function() {
         $('#user-options-container div').addClass('hide');
-        //IMPORTANTE DISABILITARE GLI A QUANDO VIENE INNESCATO QUESTO EVENTO
     });
 
+
+    /**
+     * Il click sull'invio del form della mail fa partire una 
+     * richiesta AJAX che risponde all'input inserito e, in 
+     * caso di successo, mostra la barra personale, mentre nel
+     * caso di errore mostra l'errore opportuno in rosso sotto
+     * il form di login
+     */
     $("#login-form").submit(function(e){
         e.preventDefault();
         submitLogin();
     });
 
+    $("#logout").click(function(e){
+        e.preventDefault();
+        $.post({
+            url: "../../php/logout.php",
+            datatype: "text",
+            success: function(logoutResult){
+                if(logoutResult === "okay"){
+                    showLoginForm();
+                }
+            }
+        })
+    });
+
+
+    /**
+     * Se l'utente è già loggato mostro la barra personale
+     */
     $.post({
         url: "../../php/autentication.php",
         datatype: "json",
