@@ -81,7 +81,7 @@ button#search img{
 }
 
 .hide{
-	visibility: hidden;
+	display: none;
 	background-color: transparent;
 }
 
