@@ -17,12 +17,9 @@ fieldset div{
     margin-bottom: 10px;
 }
 
-fieldset div p{
+fieldset .error{
     margin: 0;
-    color: rgba(255, 0, 0, 0.623);
-    font-size: 15px;
 }
-
 
 input[type="radio"]{
     display: inline;

@@ -21,12 +21,13 @@
 				<input type="password" placeholder="Password" name="password" id="password" class="input-grey" required>
 				<input type="submit" value="Accedi" class="input-grey" id="button-accedi">
 			</form>
+			<p class="error"></p>
 		</div>
 
 		<div id="personal-area">
 			<div id="user-menu" class="user-options">
 				<img src="../../img/icons/user.png" alt="icona utente">
-				<span>Gianmarco.pisellino@giorgio.it</span>
+				<span></span>
 				<img src="../../img/icons/arrow-down.png" alt="" id="down-arrow">
 			</div>
 			<div id="user-options-container">

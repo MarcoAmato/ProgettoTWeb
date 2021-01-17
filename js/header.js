@@ -29,12 +29,13 @@ $(function(){
 });
 
 function showLoginFormOrPersonalArea(data){
+    console.log(data);
     let jsonData = JSON.parse(data);
-    if(jsonData.username === null){
+    if(jsonData.email === null){
         showLoginForm();
         /* $("#personal-area").hide(); */
     }else{
-        showPersonalArea(jsonData);
+        showPersonalArea(jsonData.email);
         /* $("#login-div").hide();
         $("#user-menu span").text(jsonData.username); */
         //error feedback to add
@@ -64,12 +65,28 @@ function processLoginResult(loginResult){
         showLoginError(loginResult);
         return;
     }
-    showPersonalArea(loginResultJSON.username);
+    showPersonalArea(loginResultJSON.email);
     //qui va controllato il risultato del login. In caso di successo viene mostrata la barra personale. In caso di fallimento viene dato messaggio di errore login
 }
 
 function showLoginError(errorType){
-    console.log(errorType);
+    console.log("Login error: " + errorType);
+    let textToShow;
+    switch(errorType){
+        case 'server down':
+            textToShow = "Il server non è raggiungibile, prova più tardi";
+            break;
+        case 'user not found':
+            textToShow = "L'email inserita non corrisponde a nessun account, riprova";
+            break;
+        case 'wrong password for user':
+            textToShow = "Password errata";
+            break;
+        default:
+            textToShow = "Si è presentato un errore inaspettato, prova più tardi"
+            break;
+    }
+    $("#login-div p.error").text(textToShow);
     //in base al tipo di errore va dato il feedback opportuno all'utente. Leggiamo i nomi degli errori su sign-up.php
 }
 
@@ -78,8 +95,8 @@ function showLoginForm(){
     $("#login-div").show();
 }
 
-function showPersonalArea(username){
+function showPersonalArea(email){
     $("#login-div").hide();
     $("#personal-area").show();
-    $("#user-menu span").text(username);
+    $("#user-menu span").text(email);
 }

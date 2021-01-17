@@ -14,7 +14,7 @@
             <div id="password-div">
                 <label for="password-log-up">Password</label>
                 <input type="password" name="password" id="password-log-up" required>
-                <p></p>
+                <p class="error"></p>
             </div>
 
             <div id="password-repeat-div">
@@ -25,7 +25,7 @@
             <div id="nascita-div">
                 <label for="nascita">Data di nascita</label>
                 <input type="date" name="nascita" id="nascita" required>
-                <p></p>
+                <p class="error"></p>
             </div>
 
             <div>
