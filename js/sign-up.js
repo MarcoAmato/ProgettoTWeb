@@ -1,4 +1,11 @@
 $(function(){
+    if(error = getURLParameter("error")){
+        console.log(error);
+        $('#sign-up-error').text("Si è verificato un errore, riprova più tardi");
+    }else if(success = getURLParameter("success") === "true"){
+        $('#sign-up-form p.success').text("Account creato con successo");
+    }
+
     $('input[type="password"]').keyup(check_password_match);
     $('input[type="date"]').change(check_birth);
 });

@@ -12,7 +12,7 @@ function isDate($dateString){
 }
 
 function redirectWithError($path, $error){
-	header("Location :$path?error=$error");
+	header("Location: $path?error=$error");
 	exit;
 }
 

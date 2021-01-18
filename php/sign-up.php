@@ -11,21 +11,21 @@
     try {
         $db = dbconnect();
     } catch (PDOException $e) {
-        redirectWithError($PATH_TO_REDIRECT, "server down");
+        redirectWithError($PATH_TO_REDIRECT, "server_down");
     }
 
     //clan input
     if(!isset($_GET['email']) || !isset($_GET['password']) || !isset($_GET['nascita']) || !isset($_GET['genere'])){
-        redirectWithError($PATH_TO_REDIRECT,"variables not set");
+        redirectWithError($PATH_TO_REDIRECT,"variables_not_set");
 	}
 	
 	if(!isDate($_GET['nascita'])){
-        redirectWithError($PATH_TO_REDIRECT,"wrong date format");
+        redirectWithError($PATH_TO_REDIRECT,"wrong_date_format");
 	}
 
 	if($_GET['genere'] !== "m"
 		&& $_GET['genere'] !== "f"){
-            redirectWithError($PATH_TO_REDIRECT,"wrong gender");
+            redirectWithError($PATH_TO_REDIRECT,"wrong_gender");
 	}
 
     //compose query
@@ -38,11 +38,17 @@
 		INSERT INTO utenti (`email`,`password`,`data_di_nascita`,`genere`)
 		VALUES ($email,'$hashed_password','$nascita','$genere');
     ";
-    $result = $db->query($insert_query);
+
+    try{
+        echo'a';
+        $result = $db->query($insert_query);
+    }catch(Exception $e){
+        redirectWithError($PATH_TO_REDIRECT,"query_failed");
+    }
     //send it to database
     if(!$result){
         //result is null = error in processing query
-        redirectWithError($PATH_TO_REDIRECT, "query failed");
+        redirectWithError($PATH_TO_REDIRECT, "query_failed");
     }else{
         header("Location: $PATH_TO_REDIRECT?success=true");
         exit;

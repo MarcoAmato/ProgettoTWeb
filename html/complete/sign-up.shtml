@@ -37,6 +37,9 @@
             </div>
 
             <button>Registrati</button>
+
+            <p class="error" id="sign-up-error"></p>
+            <p class="success"></p>
         </fieldset>
     </form>
 
