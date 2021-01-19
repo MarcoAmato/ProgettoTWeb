@@ -1,5 +1,5 @@
 $(function(){
-    let selectPiattaforme = $("#piattaforma");
+    let selectPiattaforme = $("select#piattaforma");
     if(selectPiattaforme.length){ //We have a piattaforme select to fill
         $.post({
             url: "../../php/get-piattaforme.php",
