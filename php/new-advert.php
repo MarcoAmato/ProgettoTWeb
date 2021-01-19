@@ -24,15 +24,15 @@
 
     //image check
     $imagePath = null;
-    if(is_uploaded_file($_FILES['immagine']['tmp-name'])){
+    if(isset($_FILES["immagine"]["tmp_name"]) && is_uploaded_file($_FILES['immagine']['tmp_name'])){
         //Image is inserted, we need to check it and save it
-        $imageSaveResult = checkAndSaveImg($_FILES['immagine']);
+        $imageSaveResult = checkAndSaveImg($_FILES['immagine'], "../img/advert-img");
         if($imageSaveResult['error'] != null){
             //Error in saving image occured, we give feedback to caller
             redirectWithError($PATH_TO_NEW_ADVERT, $imageSaveResult['error']);
-        }else if(isset($imageSaveResult['success'])){
+        }else if(($imageSaveResult['success'])!=null){
             //Image was saved correctly, we save the name in the database
-            $imagePath = $imageSaveResult['success'];
+            $imagePath = "'".$imageSaveResult['success']."'";
         }else{
             //If the computation arrives here something strange happened
             redirectWithError($PATH_TO_NEW_ADVERT, "unexpected_image_error");
@@ -49,12 +49,12 @@
 
     //check if input too long
     if(strlen($_POST['titolo'])>50 || strlen($_POST['testo'])>300 || strlen($titolo) > 100 || strlen($testo) > 500){
-        redirectWithError($PATH_TO_NEW_ADVERT, "text_fields_too_long")
+        redirectWithError($PATH_TO_NEW_ADVERT, "text_fields_too_long");
     }
 
     //Check piattaforma
         $queryPiattaforme = "
-        SELECT *
+        SELECT nome
         FROM piattaforme
         ORDER BY nome
         ";
@@ -69,28 +69,36 @@
             redirectWithError($PATH_TO_NEW_ADVERT, 'query_failed');
         }
         
-        $piattaformeDisponibili = $resultQueryPiattaforme->fetchColumn();
+        $piattaformeDisponibili = $resultQueryPiattaforme->fetchAll(PDO::FETCH_COLUMN);
 
-        if(!in_array($piattaforma, $piattaformeDisponibili)){
+        $piattaformaValid = false;
+        $i = 0;
+        while(!$piattaformaValid && $i < count($piattaformeDisponibili)){
+            $p = $piattaformeDisponibili[$i];
+            if($db->quote($p) == $piattaforma){
+                $piattaformaValid = true;
+            }
+            $i++;
+        }
+
+        if(!$piattaformaValid){
             redirectWithError($PATH_TO_NEW_ADVERT, "piattaforma_unexpected");
         }
     
     $queryNewAdvert = 
     "INSERT INTO `annunci` VALUES
-    (null, '$email', $piattaforma, $titolo, $testo, '$imagePath');
-    "
+    (null, '$email', $piattaforma, $titolo, $testo, $imagePath);
+    ";
+
     try{
-        $result = $db->query($insert_query);
+        $result = $db->query($queryNewAdvert);
     }catch(Exception $e){
+        print_r($db->errorInfo());
+        exit;
         redirectWithError($PATH_TO_NEW_ADVERT,"query_failed");
     }
 
-    if(!$result){
-        //result is null = error in processing query
-        redirectWithError($PATH_TO_NEW_ADVERT, "query_failed");
-    }else{
-        header("Location: $PATH_TO_NEW_ADVERT?success=true");
-        exit;
-    }
+    header("Location: $PATH_TO_NEW_ADVERT?success=true");
+    exit;
 
 ?>

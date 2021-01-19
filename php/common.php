@@ -43,8 +43,8 @@ function checkAndSaveImg($img, $path_to_save){
 		//Controllo che il formato sia permesso.
 		if($fileError === 0){
 			//Controllo che non ci siano stati errori nel caricamento dell'immagine
-			$fileNameNew = uniqid('true')."." . $fileActualExt;
-			$fileDestination = $path_to_save . $fileNameNew;
+			$fileNameNew = uniqid('',true)."." . $fileActualExt;
+			$fileDestination = $path_to_save . "/" . $fileNameNew;
 			move_uploaded_file($fileTmpName, $fileDestination);
 
 			$result['success'] = $fileNameNew;

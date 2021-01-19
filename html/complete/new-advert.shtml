@@ -9,8 +9,6 @@
             <label for="piattaforma">Inserisci la piattaforma</label>
             <select name="piattaforma" id="piattaforma">
                 <option value="" disabled selected>Piattaforma...</option>
-                <option value="all">Tutte le piattaforme</option>
-                <option value="ps5">PS5</option>
             </select>
             
             <label for="immagine">Inserisci un'immagine (facoltativo)</label>
@@ -26,4 +24,5 @@
         </fieldset>
     </form>
 
+    <script src="../../js/new-advert.js"></script>
     <!--#include virtual="../partial/footer.html" -->  
