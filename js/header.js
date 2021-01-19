@@ -53,7 +53,6 @@ $(function(){
 });
 
 function showLoginFormOrPersonalArea(data){
-    console.log(data);
     let jsonData = JSON.parse(data);
     if(jsonData.email === null){
         showLoginForm();

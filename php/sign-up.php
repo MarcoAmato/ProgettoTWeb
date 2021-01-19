@@ -40,7 +40,6 @@
     ";
 
     try{
-        echo'a';
         $result = $db->query($insert_query);
     }catch(Exception $e){
         redirectWithError($PATH_TO_REDIRECT,"query_failed");
