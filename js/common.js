@@ -39,3 +39,13 @@ function fillSelectPiattaforme(selectPiattaforme, piattaformeJson){
         selectPiattaforme.append(piattaformaHTML);
     }
 }
+
+function fillError(errorElement, errorsNameTextMap, error, defaultErrorText){
+    for(const[key, value] of errorsNameTextMap.entries()){
+        if(key === error){
+            errorElement.text(value);
+            return;
+        }
+    }
+    errorElement.text(defaultErrorText);
+}

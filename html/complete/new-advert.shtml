@@ -21,6 +21,9 @@
             <textarea name="testo" id="testo" cols="30" rows="10" maxlength="300" placeholder="Inserisci il testo (Max 300 caratteri)"></textarea>
 
             <button>Inserisci annuncio</button>
+
+            <p class="error" id="new-advert-error"></p>
+            <p class="success"></p>
         </fieldset>
     </form>
 
