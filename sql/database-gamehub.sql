@@ -25,17 +25,37 @@ USE `gamehub`;
 
 -- --------------------------------------------------------
 
+
+--
+-- Struttura della tabella `utenti`
+--
+
+CREATE TABLE `utenti` (
+  `id` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `data_di_nascita` date NOT NULL,
+  `genere` enum('M','F') NOT NULL,
+  PRIMARY KEY(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 --
 -- Struttura della tabella `annunci`
 --
 
-CREATE TABLE `annunci` (
-  `id` int(11) NOT NULL,
-  `id_utente` int(11) NOT NULL,
-  `piattaforma` varchar(50) NOT NULL,
-  `titolo` varchar(50) NOT NULL,
-  `testo` varchar(300) DEFAULT NULL,
-  `path_immagine` varchar(200) DEFAULT NULL
+CREATE TABLE annunci (
+  id int(11) NOT NULL,
+  email_utente varchar(200) NOT NULL,
+  piattaforma varchar(50) NOT NULL,
+  titolo varchar(100) NOT NULL,
+  testo varchar(500) DEFAULT NULL,
+  path_immagine varchar(200) DEFAULT NULL,
+    
+  PRIMARY KEY(id),
+  FOREIGN KEY(email_utente) REFERENCES utenti(email),
+  FOREIGN KEY(piattaforma) REFERENCES piattaforme(nome)
+    
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -49,18 +69,6 @@ CREATE TABLE `piattaforme` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
-
---
--- Struttura della tabella `utenti`
---
-
-CREATE TABLE `utenti` (
-  `id` int(11) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL,
-  `data_di_nascita` date NOT NULL,
-  `genere` enum('M','F') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indici per le tabelle scaricate
