@@ -17,19 +17,16 @@
             <div>
             <label for="immagine">Inserisci un'immagine (facoltativo)</label>
             <input type="file" name="immagine" id="immagine">
-            <p class="error">Prova errore</p>
             </div>
 
             <div>
             <label for="titolo">Titolo dell'annuncio</label>
             <input type="text" name="titolo" id="titolo">
-            <p class="error">Prova errore</p>
             </div>
 
             <div>
             <label for="testo">Descrizione dell'annuncio</label>
             <textarea name="testo" id="testo" cols="30" rows="10" maxlength="300" placeholder="Inserisci il testo (Max 300 caratteri)"></textarea>
-            <p class="error">Prova errore</p>
             </div>
 
             <button>Inserisci annuncio</button>

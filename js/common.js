@@ -41,6 +41,9 @@ function fillSelectPiattaforme(selectPiattaforme, piattaformeJson){
 }
 
 function fillError(errorElement, errorsNameTextMap, error, defaultErrorText){
+    /**
+     * Ricorda di commentare
+     */
     for(const[key, value] of errorsNameTextMap.entries()){
         if(key === error){
             errorElement.text(value);
