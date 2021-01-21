@@ -40,7 +40,7 @@ button#sign-up:hover{
 
 #main{
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 #title{
@@ -50,16 +50,10 @@ button#sign-up:hover{
 div section{
 	border: 4px solid;
 	border-radius: 25px;
-	margin-left: 5px;
-	margin-right: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 10px;
 	width: 30%;
-}
-
-div section:hover{
-	border-color: #fe4e01;
 }
 
 div section img{
@@ -70,12 +64,29 @@ div section h2, div section p{
 	text-align: center;
 }
 
+div section h2{
+	color: #fe4e01;
+}
+
 div section ol li{
 	margin-top: 5px;
-	color: #fea701;
+	margin: 0;
+	padding: 15px 0 15px 45px;
+	list-style: none;
+	background-image: url("../img/icons/joystick.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px;
 }
+
 
 div section ul li{
 	margin-top: 5px;
-	color:  #fea701;
+	margin: 0;
+	padding: 15px 0 15px 45px;
+	list-style: none;
+	background-image: url("../img/icons/joystick.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px;
 }
