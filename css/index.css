@@ -37,3 +37,45 @@ button#sign-up{
 button#sign-up:hover{
 	color:#00BFFF;
 }
+
+#main{
+	display: flex;
+	justify-content: center;
+}
+
+#title{
+	text-align: center;
+}
+
+div section{
+	border: 4px solid;
+	border-radius: 25px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 30%;
+}
+
+div section:hover{
+	border-color: #fe4e01;
+}
+
+div section img{
+	margin: 0 auto;
+}
+
+div section h2, div section p{
+	text-align: center;
+}
+
+div section ol li{
+	margin-top: 5px;
+	color: #fea701;
+}
+
+div section ul li{
+	margin-top: 5px;
+	color:  #fea701;
+}

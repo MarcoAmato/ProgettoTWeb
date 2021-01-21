@@ -16,11 +16,15 @@
 			<!--#include virtual="../partial/search-form.html" -->
 		</div>
 	</div>
+	
+	<div id="title">
+		<h2>GUIDA ALL' UTILIZZO DELLA PIATTAFORMA</h2>
+	</div>
 
 	<div id="main">
 		<section>
-			<h2>Come vendere giochi usati</h2>
 			<img src="../../img/icons/money.png" alt="Vendere giochi">
+			<h2>Come vendere giochi usati</h2>
 			<p>Su gamehub puoi vendere i giochi che non usi più in pochi click. Questi sono i passi per poter iniziare a vendere su gamehub</p>
 			<ol>
 				<li>Iscriviti su Gamehub compilando il form qui sopra</li>
@@ -32,8 +36,9 @@
 			</ol>
 		</section>
 		<section>
-			<h2>Come comprare giochi usati</h2>
 			<img src="../../img/icons/happy.png" alt="Comprare giochi usati">
+			<h2>Come acquistare giochi usati</h2>
+			<p>Su gamehub puoi acquistare i giochi che non usi più in pochi click. Questi sono i passi per poter iniziare ad acquistare su gamehub</p>
 			<ul>
 				<li>Cerca il gioco compilando il form di ricerca</li>
 				<li>Trova l'annuncio che fa per te e cliccaci sopra</li>
