@@ -34,5 +34,7 @@
             </div>
         </div>
     </div>
+
+    <script src="../../js/search.js"></script>
 <!--#include virtual="../partial/footer.html" -->  
 

@@ -1,7 +1,7 @@
 <div id="search-form">
 	<h2>Cosa cerchi?</h2>
-	<form action="search.shtml">
-		<input type="text" name="nome" id="nome" placeholder="Nome del gioco" class="input-grey">
+	<form action="search.shtml" method="GET">
+		<input type="text" name="nome" id="nome" placeholder="Nome del gioco" class="input-grey" maxlength="50">
 		<select name="piattaforma" id="piattaforma" class="input-grey">
 			<option value="" disabled selected>Piattaforma...</option>
 		<!-- Qui va fatta una richiestra ajax per trovare tutte le piattaforme presenti nel database
