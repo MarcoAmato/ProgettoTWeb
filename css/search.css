@@ -14,9 +14,8 @@
 	display: inline;
 }
 
-.advert div{
+.advert div.advert-text{
 	margin-left: 20px;
-	align-self: start;
 }
 
 .advert img{

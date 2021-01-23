@@ -16,23 +16,8 @@
                 </div>
                 <img src="../../img/icons/empty_heart.png" alt="" class="heart">
             </div>
-            <div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <div>
-                    <h2>Dio</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
-                </div>
-                <img src="../../img/icons/empty_heart.png" alt="" class="heart">
-            </div>
-            <div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <div>
-                    <h2>Dio</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
-                </div>
-                <img src="../../img/icons/empty_heart.png" alt="" class="heart">
-            </div>
-        </div> -->
+             -->
+        </div>
     </div>
 
     <script src="../../js/search.js"></script>

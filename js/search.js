@@ -33,8 +33,10 @@ function showSearch(data){
     console.log("jsonAnnunci: "+jsonAnnunci);
     for(annuncio of jsonAnnunci){ /**
      * <div class="advert">
-            <img src="../../img/god_of_war.jpeg" alt="">
-            <div>
+            <div class="advert-image">
+                <img src="../../img/god_of_war.jpeg" alt="">
+            </div>
+            <div class="advert-text">
                 <h2>Dio</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
             </div>
@@ -44,9 +46,12 @@ function showSearch(data){
         let divAdvert = '<div class="advert">';
             if(annuncio.path_immagine !== null){
                 let imgAdvert = '<img src="../../img/advert-img/'+ annuncio.path_immagine + '" alt="'+ annuncio.titolo +'">';
-                divAdvert += imgAdvert;
+                
+                divAdvert += "<div class='advert-image'>";
+                    divAdvert += imgAdvert;
+                divAdvert += "</div>";
             }
-            divAdvert += "<div>";
+            divAdvert += "<div class='advert-text'>";
                 divAdvert += '<h2>' + annuncio.titolo + '</h2>';
                 divAdvert += '<p>' + annuncio.testo + '</p>';
             divAdvert += "</div>";
