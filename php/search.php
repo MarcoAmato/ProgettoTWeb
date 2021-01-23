@@ -22,14 +22,24 @@
     $piattaforma = $db->quote($_POST['piattaforma']);
     $nome = $db->quote("%".$_POST['nome']."%");
 
-    $getAnnunciQuery = 
-    "SELECT *
-    FROM annunci
-    WHERE piattaforma=$piattaforma
-    AND (
-        titolo LIKE $nome 
-        OR testo LIKE $nome
-    )";
+    if($_POST['piattaforma']=="all"){
+        $getAnnunciQuery = 
+        "SELECT *
+        FROM annunci
+        WHERE (
+            titolo LIKE $nome 
+            OR testo LIKE $nome
+        );";
+    }else{
+        $getAnnunciQuery = 
+        "SELECT *
+        FROM annunci
+        WHERE piattaforma=$piattaforma
+        AND (
+            titolo LIKE $nome 
+            OR testo LIKE $nome
+        );";
+    }
 
     $resultGetAnnunciQuery = null;
     try{

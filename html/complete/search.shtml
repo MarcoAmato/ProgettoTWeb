@@ -6,7 +6,7 @@
         <!--#include virtual="../partial/search-form.html" -->
 
         <div id="advertisements">
-            <h1> God of Surbo - PS4 a Surbo</h1>
+            <!-- <h1> God of Surbo - PS4 a Surbo</h1>
             <p>50 Risultati (1-20)</p>
             <div class="advert">
                 <img src="../../img/god_of_war.jpeg" alt="">
@@ -32,7 +32,7 @@
                 </div>
                 <img src="../../img/icons/empty_heart.png" alt="" class="heart">
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script src="../../js/search.js"></script>

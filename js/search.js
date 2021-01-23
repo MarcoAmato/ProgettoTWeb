@@ -2,7 +2,11 @@ $(function(){
     let nome = getURLParameter("nome");
     let piattaforma = getURLParameter("piattaforma");
 
-    $("#advertisements").append('<h1> ' + nome + ' - ' + piattaforma + ' </h1>')
+    if(piattaforma === "all"){
+        $("#advertisements").append('<h1> ' + nome + ' - tutte le piattaforme </h1>');
+    }else{
+        $("#advertisements").append('<h1> ' + nome + ' - ' + piattaforma + ' </h1>');
+    }
 
     $.post({
        url: "../../php/search.php",
