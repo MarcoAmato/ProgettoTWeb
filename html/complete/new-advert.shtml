@@ -21,7 +21,7 @@
 
             <div>
             <label for="titolo">Titolo dell'annuncio</label>
-            <input type="text" name="titolo" id="titolo">
+            <input type="text" name="titolo" id="titolo" maxlength="50">
             </div>
 
             <div>
@@ -38,3 +38,7 @@
 
     <script src="../../js/new-advert.js"></script>
     <!--#include virtual="../partial/footer.html" -->  
+
+
+
+    

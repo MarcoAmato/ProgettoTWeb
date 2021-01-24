@@ -21,6 +21,11 @@ fieldset .error{
     margin: 0;
 }
 
+input[type="email"],input[type="password"],input[type="date"]{
+    width: 200px;
+    height: 25px;
+}
+
 input[type="radio"]{
     display: inline;
 }
@@ -38,4 +43,16 @@ button{
 
 button:hover{
     background-color: #942c00;
+}
+
+input[type="text"]{
+    width: 200px;
+    height: 15px;
+    padding: 8px 10px;
+}
+
+
+#piattaforma{
+    width: 200px;
+    height: 35px;
 }
