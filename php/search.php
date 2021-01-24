@@ -8,7 +8,7 @@
     try {
         $db = dbconnect();
     } catch (PDOException $e) {
-        exit('server down');
+        exit('server_down');
     }
 
     //piattaforma, nome

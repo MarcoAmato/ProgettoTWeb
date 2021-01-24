@@ -8,6 +8,6 @@
         unset($_SESSION['email']);
         exit('okay');
     }else{
-        exit('error email not set');
+        exit('email_not_set');
     }
 ?>
