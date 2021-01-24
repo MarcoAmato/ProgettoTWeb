@@ -1,5 +1,6 @@
 #advertisements{
-	width: 100%;
+	width: 80%;
+	margin: auto;
 }
 
 .advert{
@@ -10,17 +11,24 @@
 	height: 150px;
 }
 
-.advert *{
-	display: inline;
+.advert>*{
+	display: inline-block;
+}
+
+.advert div.advert-image{
+	display: inline-block;
+    width: 20%;
 }
 
 .advert div.advert-text{
-	margin-left: 20px;
+	margin: auto 20px;
+	width: 70%;
+	text-align: left;
 }
 
 .advert img{
-    max-width: 10%;
-    height: 150px;
+	height: 150px;
+	margin-left: 0;
 }
 
 .advert img.heart{
