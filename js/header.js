@@ -53,18 +53,17 @@ $(function(){
      */
     $.post({
         url: "../../php/autentication.php",
-        datatype: "json",
+        datatype: "text",
         success: showLoginFormOrPersonalArea
     });
 });
 
-function showLoginFormOrPersonalArea(data){
-    let jsonData = JSON.parse(data);
-    if(jsonData.email === null){
+function showLoginFormOrPersonalArea(response){
+    if(response === null){
         showLoginForm();
         /* $("#personal-area").hide(); */
     }else{
-        showPersonalArea(jsonData.email);
+        showPersonalArea(response);
         /* $("#login-div").hide();
         $("#user-menu span").text(jsonData.username); */
         //error feedback to add

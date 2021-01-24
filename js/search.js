@@ -3,8 +3,26 @@ searchErrorMap.set("server_down", "Il server non è raggiungibile, riprovare pi�
 searchErrorMap.set("query_failed", "Non è possibile visualizzare gli annunci, riprovare più tardi");
 
 $(function () {
+    let personal = getURLParameter("personal");
     let nome = getURLParameter("nome");
     let piattaforma = getURLParameter("piattaforma");
+
+    if(personal === "true"){
+        $.post({
+            url: "../../php/search.php",
+            datatype: "json",
+            data: {
+                'nome': nome,
+                'piattaforma': piattaforma
+            },
+            success: showSearch,
+            error: function () {
+                showSearch("server_unreachable");
+            }
+        });
+
+        return;
+    }
 
     if (!nome || !piattaforma) {
         showSearch("variables_not_set");

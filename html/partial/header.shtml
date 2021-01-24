@@ -31,7 +31,7 @@
 				<img src="../../img/icons/arrow-down.png" alt="" id="down-arrow">
 			</div>
 			<div id="user-options-container">
-				<a href="#">
+				<a href="./search.html?personal=true">
 					<div class="user-options hide">
 						<img src="../../img/icons/advert.png" alt="annunci">
 						<span>I tuoi annunci</span>
