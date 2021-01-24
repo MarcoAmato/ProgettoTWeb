@@ -8,12 +8,12 @@
             
             <div>
                 <label for="email-log-up">La tua email</label>
-                <input type="email" name="email" id="email-log-up" placeholder="Email" required>
+                <input type="email" name="email" id="email-log-up" placeholder="Email" maxlength="200" required>
             </div>
 
             <div id="password-div">
                 <label for="password-log-up">Password</label>
-                <input type="password" name="password" id="password-log-up" required>
+                <input type="password" name="password" id="password-log-up" minlength="8" maxlength="200" required>
                 <p class="error"></p>
             </div>
 
