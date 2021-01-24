@@ -18,6 +18,8 @@
             </div>
              -->
         </div>
+
+        <p class="error" id="search-error"></p>
     </div>
 
     <script src="../../js/search.js"></script>
