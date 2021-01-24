@@ -1,0 +1,11 @@
+    <!--#include virtual="../partial/header.shtml" -->
+    
+    <link rel="stylesheet" href="../../css/advert.css">
+
+    <h1>Titolo annuncio</h1>
+
+
+
+
+
+    <!--#include virtual="../partial/footer.html" -->  
