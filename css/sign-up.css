@@ -2,7 +2,7 @@ h1{
     text-align: center;
 }
 
-fieldset input,button, select{
+fieldset input,button,select{
     display: block;
     margin: 0 auto;
 }
@@ -21,9 +21,9 @@ fieldset .error{
     margin: 0;
 }
 
-input[type="email"],input[type="password"],input[type="date"]{
-    width: 200px;
-    height: 25px;
+input[type="email"],input[type="password"],input[type="date"],[type="text"],#piattaforma{
+    width: 210px;
+    height: 28px;
 }
 
 input[type="radio"]{
@@ -43,16 +43,4 @@ button{
 
 button:hover{
     background-color: #942c00;
-}
-
-input[type="text"]{
-    width: 200px;
-    height: 15px;
-    padding: 8px 10px;
-}
-
-
-#piattaforma{
-    width: 200px;
-    height: 35px;
 }
