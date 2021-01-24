@@ -20,19 +20,18 @@
         exit;
     }
 
-    if(isset($_POST['email'])){
-        $email = $db->quote($_POST['email']); //errore qui
-    }else{
-        echo 'email missing';
+    if(!isset($_POST['email']) || !isset($_POST['password'])){
+        echo 'variables_missing';
         exit;
     }
 
-    if(isset($_POST['password'])){
-        $password = $db->quote($_POST['password']);
-    }else{
-        echo "password missing";
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        echo'bad_email_format';
         exit;
     }
+
+    $email = $db->quote($_POST['email']);
+    $password = $db->quote($_POST['password']);
     
     $select_user_from_password = "
     SELECT * 
@@ -50,11 +49,11 @@
     $user = $result->fetch(PDO::FETCH_ASSOC);
 
     if(!$user){
-        echo "user not found";
+        echo "user_not_found";
         exit;
     }else{
         if(!password_verify($password, $user['password'])){
-            echo "wrong password for user";
+            echo "wrong_password";
             exit;
         }
     }

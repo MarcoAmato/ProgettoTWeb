@@ -1,3 +1,9 @@
+const loginErrorMap = new Map();
+loginErrorMap.set("server_down", "Il server non è raggiungibile, prova più tardi");
+loginErrorMap.set("user_not_found", "L'email inserita non corrisponde a nessun account, riprova");
+loginErrorMap.set("wrong_password", "Password errata");
+
+
 $(function(){
     /**
      * mostro le opzioni personali quando l'utente passa sopra 
@@ -94,23 +100,9 @@ function processLoginResult(loginResult){
 
 function showLoginError(errorType){
     console.log("Login error: " + errorType);
-    let textToShow;
-    switch(errorType){
-        case 'server down':
-            textToShow = "Il server non è raggiungibile, prova più tardi";
-            break;
-        case 'user not found':
-            textToShow = "L'email inserita non corrisponde a nessun account, riprova";
-            break;
-        case 'wrong password for user':
-            textToShow = "Password errata";
-            break;
-        default:
-            textToShow = "Si è presentato un errore inaspettato, prova più tardi"
-            break;
-    }
-    $("#login-div p.error").text(textToShow);
-    //in base al tipo di errore va dato il feedback opportuno all'utente. Leggiamo i nomi degli errori su sign-up.php
+    let errorElement = $("#login-div p.error");
+    let defaultErrorText = "Si è verificato un errore, riprova più tardi";
+    fillError(errorElement, loginErrorMap, errorType, defaultErrorText);
 }
 
 function showLoginForm(){
