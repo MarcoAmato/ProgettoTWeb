@@ -67,6 +67,8 @@ function showPersonalSearch(autentication){
 }
 
 function showSearch(data) {
+    $("#advertisements").html("");
+
     let jsonAnnunci = null;
     try {
         jsonAnnunci = JSON.parse(data);
@@ -77,6 +79,8 @@ function showSearch(data) {
         fillError(searchErrorElement, searchErrorMap, data, defaultErrorText);
         return;
     }
+
+    let idAnnunci = [];
 
     for (annuncio of jsonAnnunci) { /**
      * <div class="advert">
@@ -106,5 +110,28 @@ function showSearch(data) {
         divAdvert += '</div>';
 
         $("#advertisements").append(divAdvert);
+
+        idAnnunci.push(annuncio.id);
     }
+
+    /* loadPreferiti(idAnnunci) */
+}
+
+/* function loadPreferiti(idAnnunci){
+    $.post({
+        url: "../../php/getPreferiti.php",
+        datatype: "json",
+        data: {
+            'id_annunci': idAnnunci
+        },
+        success: updateSearchPreferiti(data)
+        },
+        error: function () {
+            showSearch("server_unreachable");
+        }
+    });
+} */
+
+function updateSearchPreferiti(id_preferiti){
+
 }
