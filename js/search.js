@@ -9,13 +9,9 @@ $(function () {
 
     if(personal === "true"){
         $.post({
-            url: "../../php/search.php",
-            datatype: "json",
-            data: {
-                'nome': nome,
-                'piattaforma': piattaforma
-            },
-            success: showSearch,
+            url: "../../php/autentication.php",
+            datatype: "text",
+            success: showPersonalSearch,
             error: function () {
                 showSearch("server_unreachable");
             }
@@ -51,6 +47,24 @@ $(function () {
         }
     });
 });
+
+function showPersonalSearch(autentication){
+    if(autentication === null){
+        window.location.replace("./index.shtml");
+    }else{
+        $.post({
+            url: "../../php/search.php",
+            datatype: "json",
+            data:{
+                'personal': 'true'
+            },
+            success: showSearch,
+            error: function () {
+                showSearch("server_unreachable");
+            }
+        });
+    }
+}
 
 function showSearch(data) {
     let jsonAnnunci = null;
