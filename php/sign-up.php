@@ -1,9 +1,9 @@
 <?php
     $PATH_TO_REDIRECT = "../html/complete/sign-up.shtml";
 
-    if(!isset($_SERVER["REQUEST_METHOD"]) || $_SERVER["REQUEST_METHOD"] != "GET"){
+    if(!isset($_SERVER["REQUEST_METHOD"]) || $_SERVER["REQUEST_METHOD"] != "POST"){
         header("HTTP/1.1 400 Invalid Request");
-        die("ERROR 400: Invalid request - This service accepts only GET requests.");
+        die("ERROR 400: Invalid request - This service accepts only POST requests.");
 	}
 	
     include './common.php';
@@ -15,24 +15,39 @@
     }
 
     //clan input
-    if(!isset($_GET['email']) || !isset($_GET['password']) || !isset($_GET['nascita']) || !isset($_GET['genere'])){
+    if(!isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['nascita']) || !isset($_POST['genere'])){
         redirectWithError($PATH_TO_REDIRECT,"variables_not_set");
 	}
 	
-	if(!isDate($_GET['nascita'])){
+	if(!isDate($_POST['nascita'])){
         redirectWithError($PATH_TO_REDIRECT,"wrong_date_format");
 	}
 
-	if($_GET['genere'] !== "m"
-		&& $_GET['genere'] !== "f"){
+	if($_POST['genere'] !== "m"
+		&& $_POST['genere'] !== "f"){
             redirectWithError($PATH_TO_REDIRECT,"wrong_gender");
 	}
 
     //compose query
-    $email = $db->quote($_GET['email']);
-    $hashed_password = password_hash($db->quote($_GET['password']), PASSWORD_DEFAULT);
-	$nascita = $_GET['nascita'];
-	$genere = $_GET['genere'];
+    $email = $db->quote($_POST['email']);
+    $user_exists_query = "
+    SELECT * FROM utenti WHERE email = $email;
+    ";
+
+    try{
+        $result_user_exists_query = $db->query($user_exists_query);
+    }catch(Exception $e){
+        redirectWithError($PATH_TO_REDIRECT,"query_failed");
+    }
+
+    if($result_user_exists_query->rowCount()>0){
+        //email is in database
+        redirectWithError($PATH_TO_REDIRECT, "email_registered");
+    }
+
+    $hashed_password = password_hash($db->quote($_POST['password']), PASSWORD_DEFAULT);
+	$nascita = $_POST['nascita'];
+	$genere = $_POST['genere'];
 
 	$insert_query ="
 		INSERT INTO utenti (`email`,`password`,`data_di_nascita`,`genere`)

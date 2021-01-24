@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="../../css/sign-up.css">
 
     <h1>Registrati su GameHub</h1>
-    <form action="../../php/sign-up.php" method="GET" id="sign-up-form">
+    <form action="../../php/sign-up.php" method="POST" id="sign-up-form">
         <fieldset>
             <legend>Crea un nuovo account</legend>
             

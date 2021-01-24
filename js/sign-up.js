@@ -1,7 +1,12 @@
+const errorsMap = new Map();
+errorsMap.set("email_registered", "L'email ha già un account associato, inserire un'altra email");
+
 $(function(){
     if(error = getURLParameter("error")){
         console.log(error);
-        $('#sign-up-error').text("Si è verificato un errore, riprova più tardi");
+        let errorElement = $('#sign-up-error');
+        let defaultErrorText = "Si è verificato un errore, riprova più tardi";
+        fillError(errorElement, errorsMap, error, defaultErrorText);
     }else if(success = getURLParameter("success") === "true"){
         $('#sign-up-form p.success').text("Account creato con successo");
     }
