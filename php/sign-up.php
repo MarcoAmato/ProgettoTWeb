@@ -17,7 +17,11 @@
     //clan input
     if(!isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['nascita']) || !isset($_POST['genere'])){
         redirectWithError($PATH_TO_REDIRECT,"variables_not_set");
-	}
+    }
+    
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        redirectWithError($PATH_TO_REDIRECT, 'bad_email_format');
+    }
 	
 	if(!isDate($_POST['nascita'])){
         redirectWithError($PATH_TO_REDIRECT,"wrong_date_format");
