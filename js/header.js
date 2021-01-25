@@ -59,7 +59,7 @@ $(function(){
 });
 
 function showLoginFormOrPersonalArea(response){
-    if(response === null){
+    if(!response){
         showLoginForm();
         /* $("#personal-area").hide(); */
     }else{
