@@ -173,11 +173,12 @@ function updateSearchPreferiti(arrayPreferiti) {
 }
 
 function removePreferiti(){
+    const heartElement = $(this);
     const id_clicked = $(this).attr("id");
     const indexAnnuncio = id_clicked.slice(-1);
     
     $.post({
-        url: "preferiti-operations.php",
+        url: "../../php/preferiti-operations.php",
         data: {
             operation: "remove",
             id_annuncio: idAnnunci[indexAnnuncio]
@@ -188,8 +189,8 @@ function removePreferiti(){
                 showPreferitiError($(this), returnValue);
                 return;
             }
-            $(this).click(addPreferiti);
-            $(this).attr("src","../../img/icons/empty_heart.png");
+            heartElement.click(addPreferiti);
+            heartElement.attr("src","../../img/icons/empty_heart.png");
         },
         error: function(){
             showPreferitiError($(this),"page_not_found");
@@ -198,11 +199,12 @@ function removePreferiti(){
 }
 
 function addPreferiti(){
+    const heartElement = $(this);
     const id_clicked = $(this).attr("id");
     const indexAnnuncio = id_clicked.slice(-1);
     
     $.post({
-        url: "preferiti-operations.php",
+        url: "../../php/preferiti-operations.php",
         data: {
             operation: "add",
             id_annuncio: idAnnunci[indexAnnuncio]
@@ -213,15 +215,18 @@ function addPreferiti(){
                 showPreferitiError($(this), returnValue);
                 return;
             }
-            $(this).click(removePreferiti);
-            $(this).attr("src","../../img/icons/full_heart.png");
+            heartElement.click(removePreferiti);
+            heartElement.attr("src","../../img/icons/full_heart.png");
         },
         error: function(){
             showPreferitiError($(this),"page_not_found");
         }
     });
+
+    console.log("pino");
 }
 
 function showPreferitiError(heartElement, errorType){
+    console.log(errorType);
     // mostra l'errore da qualche parte
 }
