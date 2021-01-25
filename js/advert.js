@@ -1,3 +1,6 @@
+const advertLoadingErrorMap = new Map();
+
+
 $(function(){
     let id = getUrlParameter("id");
 
@@ -7,13 +10,22 @@ $(function(){
         data: {
             'id': id,
         },
-        success: showSearch,
+        success: showAdvert,
         error: function () {
-            displayError("server_unreachable");
+            displayError(advertLoadingErrorMap, "server_unreachable", "Siamo spiacenti, l'annuncio non è disponibile");
         }
     });
 });
 
-function showSearch(){
+function showAdvert(jsonAnnuncio){
+    let annuncio;
+    try {
+        annuncio = JSON.parse(jsonAnnuncio);
+    } catch (e) {
+        console.log("error: " + jsonAnnuncio);
+        displayError(advertLoadingErrorMap, jsonAnnuncio, "Siamo spiacenti, l'annuncio non è disponibile");
+        return;
+    }
 
+    //componi html
 }
