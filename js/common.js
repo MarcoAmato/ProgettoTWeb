@@ -53,3 +53,8 @@ function fillError(errorElement, errorsNameTextMap, error, defaultErrorText){
     }
     errorElement.text(defaultErrorText);
 }
+
+function displayError(errorsNameTextMap, error, defaultErrorText){
+    $("#main").empty();
+    fillError($("#main"), errorsNameTextMap, error, defaultErrorText);
+}

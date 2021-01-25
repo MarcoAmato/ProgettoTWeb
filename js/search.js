@@ -96,12 +96,16 @@ function showSearch(data) {
             let imgAdvert = '<img src="../../img/advert-img/' + annuncio.path_immagine + '" alt="' + annuncio.titolo + '">';
 
             divAdvert += "<div class='advert-image'>";
-                divAdvert += imgAdvert;
+                divAdvert += "<a href = 'advert.shtml?id="+annuncio.id+"'>";
+                    divAdvert += imgAdvert;
+                divAdvert += "</a>";
             divAdvert += "</div>";
         }
             divAdvert += "<div class='advert-text'>";
-                divAdvert += '<h2>' + annuncio.titolo + '</h2>';
-                divAdvert += '<p>' + annuncio.testo + '</p>';
+                divAdvert += "<a href = 'advert.shtml?id="+annuncio.id+"'>";
+                    divAdvert += '<h2>' + annuncio.titolo + '</h2>';
+                    divAdvert += '<p>' + annuncio.testo + '</p>';
+                divAdvert += "</a>";
             divAdvert += "</div>";
             divAdvert += '<img src="../../img/icons/empty_heart.png" alt="" id=heart'+ indexAnnuncio +' class="heart">';
         divAdvert += '</div>';

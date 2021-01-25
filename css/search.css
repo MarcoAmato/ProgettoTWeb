@@ -16,7 +16,12 @@
 	flex-wrap:nowrap;
 }
 
-.advert>*{
+.advert a{
+	text-decoration: none;
+	color: white;
+}
+
+.advert div.advert-image, .advert div.advert-text, .advert img{
 	display: inline-block;
 }
 
