@@ -104,7 +104,7 @@ function showSearch(data) {
         divAdvert += '<h2>' + annuncio.titolo + '</h2>';
         divAdvert += '<p>' + annuncio.testo + '</p>';
         divAdvert += "</div>";
-        divAdvert += '<img src="../../img/icons/empty_heart.png" alt="" class="heart">';
+        divAdvert += '<img src="../../img/icons/empty_heart.png" alt="" id=heart'+ indexAnnuncio +' class="heart">';
         divAdvert += '</div>';
 
         $("#advertisements").append(divAdvert);
@@ -156,21 +156,15 @@ function updateSearchPreferiti(arrayPreferiti) {
 			console.log(arrayPreferiti);
 		}
 		return;
-    }	
-
-    console.log(arrayPreferiti);
+    }
 
     let numAnnuncio = 0;
 
     for (isPreferito of jsonPreferiti) {
-        console.log(numAnnuncio);
         if(isPreferito){
-            console.log("yes");
-            console.log("#annuncio"+numAnnuncio+" .heart");
             $("#annuncio"+numAnnuncio+" .heart").attr("src","../../img/icons/full_heart.png");
             $("#annuncio"+numAnnuncio+" .heart").click(removePreferiti);
         }else{
-            console.log("no");
             $("#annuncio"+numAnnuncio+" .heart").click(addPreferiti);
         }
         numAnnuncio++;
@@ -178,9 +172,23 @@ function updateSearchPreferiti(arrayPreferiti) {
 }
 
 function removePreferiti(){
+    const id_clicked = $(this).attr("id");
+    const indexHeart = id_clicked.slice(-1);
     
+    $.post({
+        url: "preferiti-operations.php",
+        data: {
+
+        },
+        datatype: "text",
+        success: function(){
+            $(this).click(addPreferiti);
+            $(this).attr("src","../../img/icons/empty_heart.png");
+        }
+    });
+    /* $(this) */
 }
 
 function addPreferiti(){
-    
+    /* $(this) */
 }
