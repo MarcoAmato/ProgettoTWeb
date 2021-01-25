@@ -6,17 +6,6 @@
         <!--#include virtual="../partial/search-form.html" -->
 
         <div id="advertisements">
-         <!-- <h1> God of Surbo - PS4 a Surbo</h1>
-            <p>50 Risultati (1-20)</p>
-            <div class="advert">
-                <img src="../../img/god_of_war.jpeg" alt="">
-                <div>
-                    <h2>Dio</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
-                </div>
-                <img src="../../img/icons/empty_heart.png" alt="" class="heart">
-            </div>
-             -->
         </div>
 
         <p class="error" id="search-error"></p>
