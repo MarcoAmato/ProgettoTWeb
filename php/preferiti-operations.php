@@ -52,5 +52,10 @@
 
     $result = $db->query($query);
 
-    exit("success");
+    if($result->rowCount()){
+        exit("success");
+    }else{
+        echo $result->rowCount();
+        exit("query_failed");
+    }
 ?>

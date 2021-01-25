@@ -187,6 +187,7 @@ function removePreferiti(){
                 showPreferitiError($(this), returnValue);
                 return;
             }
+            heartElement.off();
             heartElement.click(addPreferiti);
             heartElement.attr("src","../../img/icons/empty_heart.png");
         },
@@ -213,6 +214,7 @@ function addPreferiti(){
                 showPreferitiError($(this), returnValue);
                 return;
             }
+            heartElement.off();
             heartElement.click(removePreferiti);
             heartElement.attr("src","../../img/icons/full_heart.png");
         },
@@ -220,8 +222,6 @@ function addPreferiti(){
             showPreferitiError($(this),"page_not_found");
         }
     });
-
-    console.log("pino");
 }
 
 function showPreferitiError(heartElement, errorType){
