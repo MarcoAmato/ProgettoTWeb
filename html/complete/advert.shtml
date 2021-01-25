@@ -4,6 +4,16 @@
 
     <h1>Titolo annuncio</h1>
 
+    <div id="main">
+        <div id="img">
+
+        </div>
+
+        <div id="text">
+
+        </div>
+    </div>
+
 
 
 

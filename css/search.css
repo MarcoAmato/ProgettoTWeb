@@ -1,6 +1,9 @@
 #advertisements{
-	width: 80%;
-	margin: auto;
+	width: 70%;
+}
+#search-form{
+	margin-left: 6px;
+	margin-bottom: 15px;
 }
 
 .advert{
@@ -9,6 +12,7 @@
 	background-color: #706c61;
 	border: 2px solid #333333;
 	height: 150px;
+	width: 70%;
 }
 
 .advert>*{
@@ -22,7 +26,7 @@
 
 .advert div.advert-text{
 	margin: auto 20px;
-	width: 70%;
+	width: 65%;
 	text-align: left;
 }
 
