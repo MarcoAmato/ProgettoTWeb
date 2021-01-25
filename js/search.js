@@ -7,7 +7,7 @@ $(function () {
     let nome = getURLParameter("nome");
     let piattaforma = getURLParameter("piattaforma");
 
-    if(personal === "true"){
+    if (personal === "true") {
         $.post({
             url: "../../php/autentication.php",
             datatype: "text",
@@ -48,14 +48,14 @@ $(function () {
     });
 });
 
-function showPersonalSearch(autentication){
-    if(autentication === null){
+function showPersonalSearch(autentication) {
+    if (autentication === null) {
         window.location.replace("./index.shtml");
-    }else{
+    } else {
         $.post({
             url: "../../php/search.php",
             datatype: "json",
-            data:{
+            data: {
                 'personal': 'true'
             },
             success: showSearch,
@@ -81,6 +81,7 @@ function showSearch(data) {
     }
 
     let idAnnunci = [];
+    let indexAnnuncio = 0;
 
     for (annuncio of jsonAnnunci) { /**
      * <div class="advert">
@@ -94,7 +95,7 @@ function showSearch(data) {
             <img src="../../img/icons/empty_heart.png" alt="" class="heart">
         </div>
      */
-        let divAdvert = '<div class="advert">';
+        let divAdvert = '<div class="advert" id="annuncio' + indexAnnuncio + '">';
         if (annuncio.path_immagine !== null) {
             let imgAdvert = '<img src="../../img/advert-img/' + annuncio.path_immagine + '" alt="' + annuncio.titolo + '">';
 
@@ -112,26 +113,56 @@ function showSearch(data) {
         $("#advertisements").append(divAdvert);
 
         idAnnunci.push(annuncio.id);
+        indexAnnuncio++;
     }
 
-    /* loadPreferiti(idAnnunci) */
+    loadPreferiti(idAnnunci)
 }
 
-/* function loadPreferiti(idAnnunci){
+ /**
+  * 
+  * @param {Number[]} idAnnunci array di id degli annunci presenti nella ricerca.
+ * In idAnnunci[i] ci sarà l'id corrispondente all'annuncio collocato
+ * nell'advert con id "advert-i".
+  */
+function loadPreferiti(idAnnunci) {
     $.post({
         url: "../../php/getPreferiti.php",
         datatype: "json",
         data: {
             'id_annunci': idAnnunci
         },
-        success: updateSearchPreferiti(data)
-        },
+        success: updateSearchPreferiti,
         error: function () {
             showSearch("server_unreachable");
         }
     });
-} */
+}
 
-function updateSearchPreferiti(id_preferiti){
+/**
+ * 
+ * @param {boolean[]} arrayPreferiti array di tipo boolean, contiene true
+ * se l'annuncio è già tra i preferiti, false altrimenti
+ */
+function updateSearchPreferiti(arrayPreferiti) {
+
+    let numAnnuncio = 0;
+
+    for (isPreferito of arrayPreferiti) {
+        if(isPreferito){
+            $("#annuncio"+numAnnuncio+" .heart").src="../../img/icons/full_heart.png";
+            $("#annuncio"+numAnnuncio+" .heart").click(removePreferiti);
+        }else{
+            $("#annuncio"+numAnnuncio+" .heart").click(addPreferiti);
+        }
+        numAnnuncio++;
+    }
+}
+
+function removePreferiti(){
+
+}
+
+function addPreferiti(){
 
 }
