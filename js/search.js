@@ -25,9 +25,6 @@ $(function () {
         return;
     }
 
-    console.log(nome);
-    console.log(piattaforma);
-
     if (piattaforma === "all") {
         $("#advertisements").append('<h1> ' + nome + ' - tutte le piattaforme </h1>');
     } else {
@@ -144,17 +141,36 @@ function loadPreferiti(idAnnunci) {
 /**
  * 
  * @param {boolean[]} arrayPreferiti array di tipo boolean, contiene true
- * se l'annuncio è già tra i preferiti, false altrimenti
+ * se l'annuncio è già tra i preferiti, false altrimenti. In caso di errori
+ * lato server invece è una string contenente l'errore;
  */
 function updateSearchPreferiti(arrayPreferiti) {
 
+    let jsonPreferiti = null;
+    try {
+        jsonPreferiti = JSON.parse(arrayPreferiti);
+    } catch (e) {
+        if(arrayPreferiti === "access_denied"){
+			//aggiungi al click di tutti i cuori un popup che invita a registrarsi
+		}else{
+			console.log(arrayPreferiti);
+		}
+		return;
+    }	
+
+    console.log(arrayPreferiti);
+
     let numAnnuncio = 0;
 
-    for (isPreferito of arrayPreferiti) {
+    for (isPreferito of jsonPreferiti) {
+        console.log(numAnnuncio);
         if(isPreferito){
-            $("#annuncio"+numAnnuncio+" .heart").src="../../img/icons/full_heart.png";
+            console.log("yes");
+            console.log("#annuncio"+numAnnuncio+" .heart");
+            $("#annuncio"+numAnnuncio+" .heart").attr("src","../../img/icons/full_heart.png");
             $("#annuncio"+numAnnuncio+" .heart").click(removePreferiti);
         }else{
+            console.log("no");
             $("#annuncio"+numAnnuncio+" .heart").click(addPreferiti);
         }
         numAnnuncio++;
@@ -162,9 +178,9 @@ function updateSearchPreferiti(arrayPreferiti) {
 }
 
 function removePreferiti(){
-
+    
 }
 
 function addPreferiti(){
-
+    
 }
