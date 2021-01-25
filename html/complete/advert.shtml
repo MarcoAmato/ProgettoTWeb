@@ -5,14 +5,13 @@
     <h1>Titolo annuncio</h1>
 
     <div id="main">
+        
         <div id="img">
-            <img src="../../img/god_of_war.jpeg" alt="">
-
+            <img src="../../img/advert-img/600723a4413455.52309020.jpg" alt="">
+            <p>vbjdfvbdjkbjdfvbjkdfvbjkdfvbjkdfbkdfvbjkdfvbjkdbnvjkdnbvjkdfmnvjkndvmndkmvnfdnvjk</p>
+            <a href="mailto:prova@gmail.com">prova@gmail.com</a>
         </div>
 
-        <div id="text">
-
-        </div>
     </div>
 
 
