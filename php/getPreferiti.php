@@ -30,10 +30,27 @@
         }
     }
 
+    $email = $db->quote($_SESSION['email']);
+    $id_annunci = $_POST['id_annunci'];
+
     $select_annunci_preferiti = 
     "SELECT id_annuncio
     FROM preferiti
-    WHERE preferiti.email_utente='d@a.i'
-    AND id_annuncio IN (6,7,8,9);
+    WHERE preferiti.email_utente=$email
+    AND id_annuncio IN $id_annunci;
     ";
+
+    $result = $db->query($select_annunci_preferiti);
+    $annunci_preferiti = $result->fetchAll();
+
+    $is_preferito_array = array();
+    foreach($id_annunci as $id_annuncio){
+        if(in_array($id_annuncio, $annunci_preferiti)){
+            array_push($is_preferito_array, true);
+        }else{
+            array_push($is_preferito_array, false);
+        }
+    }
+
+    return json_encode($is_preferito_array);
 ?>

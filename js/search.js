@@ -120,6 +120,8 @@ function showSearch(data) {
 }
 
  /**
+  * Manda una richiesta al server per ottenere quali annunci tra quelli
+  * corrispondenti alla ricerca sono già tra i preferiti
   * 
   * @param {Number[]} idAnnunci array di id degli annunci presenti nella ricerca.
  * In idAnnunci[i] ci sarà l'id corrispondente all'annuncio collocato
