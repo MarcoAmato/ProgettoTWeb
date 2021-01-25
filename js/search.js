@@ -2,6 +2,8 @@ const searchErrorMap = new Map();
 searchErrorMap.set("server_down", "Il server non è raggiungibile, riprovare più tardi");
 searchErrorMap.set("query_failed", "Non è possibile visualizzare gli annunci, riprovare più tardi");
 
+const idAnnunci = [];
+
 $(function () {
     let personal = getURLParameter("personal");
     let nome = getURLParameter("nome");
@@ -77,7 +79,6 @@ function showSearch(data) {
         return;
     }
 
-    let idAnnunci = [];
     let indexAnnuncio = 0;
 
     for (annuncio of jsonAnnunci) { /**
@@ -113,7 +114,7 @@ function showSearch(data) {
         indexAnnuncio++;
     }
 
-    loadPreferiti(idAnnunci)
+    loadPreferiti()
 }
 
  /**
@@ -124,7 +125,7 @@ function showSearch(data) {
  * In idAnnunci[i] ci sarà l'id corrispondente all'annuncio collocato
  * nell'advert con id "advert-i".
   */
-function loadPreferiti(idAnnunci) {
+function loadPreferiti() {
     $.post({
         url: "../../php/getPreferiti.php",
         datatype: "json",
@@ -173,22 +174,54 @@ function updateSearchPreferiti(arrayPreferiti) {
 
 function removePreferiti(){
     const id_clicked = $(this).attr("id");
-    const indexHeart = id_clicked.slice(-1);
+    const indexAnnuncio = id_clicked.slice(-1);
     
     $.post({
         url: "preferiti-operations.php",
         data: {
-
+            operation: "remove",
+            id_annuncio: idAnnunci[indexAnnuncio]
         },
         datatype: "text",
-        success: function(){
+        success: function(returnValue){
+            if(returnValue !== "success"){
+                showPreferitiError($(this), returnValue);
+                return;
+            }
             $(this).click(addPreferiti);
             $(this).attr("src","../../img/icons/empty_heart.png");
+        },
+        error: function(){
+            showPreferitiError($(this),"page_not_found");
         }
     });
-    /* $(this) */
 }
 
 function addPreferiti(){
-    /* $(this) */
+    const id_clicked = $(this).attr("id");
+    const indexAnnuncio = id_clicked.slice(-1);
+    
+    $.post({
+        url: "preferiti-operations.php",
+        data: {
+            operation: "add",
+            id_annuncio: idAnnunci[indexAnnuncio]
+        },
+        datatype: "text",
+        success: function(returnValue){
+            if(returnValue !== "success"){
+                showPreferitiError($(this), returnValue);
+                return;
+            }
+            $(this).click(removePreferiti);
+            $(this).attr("src","../../img/icons/full_heart.png");
+        },
+        error: function(){
+            showPreferitiError($(this),"page_not_found");
+        }
+    });
+}
+
+function showPreferitiError(heartElement, errorType){
+    // mostra l'errore da qualche parte
 }
