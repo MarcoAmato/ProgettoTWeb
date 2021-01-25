@@ -31,7 +31,7 @@
     }
 
     if($result_query_get_annuncio->rowCount() == 1){
-        exit(json_encode($result_query_get_annuncio->fetchAll()));
+        exit(json_encode($result_query_get_annuncio->fetch()));
     }else{
         exit("annuncio_not_found");
     }

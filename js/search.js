@@ -10,6 +10,8 @@ $(function () {
     let piattaforma = getURLParameter("piattaforma");
 
     if (personal === "true") {
+        $("#main").append("<h1> I tuoi annunci </h1>");
+
         $.post({
             url: "../../php/autentication.php",
             datatype: "text",
@@ -85,10 +87,12 @@ function showSearch(data) {
     if(piattaforma === "all"){
         piattaforma = "Tutte le piattaforme";
     }
-    const nome_raw = getURLParameter("nome");
-    const nome = nome_raw.replace(/_/g, " ");
-    let h1 = "<h1> "+ nome +" - "+ piattaforma +" </h1>";
-    $("#advertisements").append(h1);
+    let nome_raw;
+    if(nome_raw = getURLParameter("nome")){
+        const nome = nome_raw.replace(/_/g, " ");
+        let h1 = "<h1> "+ nome +" - "+ piattaforma +" </h1>";
+        $("#advertisements").append(h1);
+    }
 
     for (annuncio of jsonAnnunci) {
         let divAdvert = '<div class="advert" id="annuncio' + indexAnnuncio + '">';
@@ -153,9 +157,7 @@ function updateSearchPreferiti(arrayPreferiti) {
     try {
         jsonPreferiti = JSON.parse(arrayPreferiti);
     } catch (e) {
-        if(arrayPreferiti === "access_denied"){
-			//aggiungi al click di tutti i cuori un popup che invita a registrarsi
-		}else{
+        if(arrayPreferiti !== "access_denied" && arrayPreferiti !== "id_annunci_missing"){
 			console.log(arrayPreferiti);
 		}
 		return;

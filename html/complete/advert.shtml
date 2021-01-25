@@ -14,8 +14,5 @@
 
     </div>
 
-
-
-
-
+    <script src="../../js/advert.js"></script>
     <!--#include virtual="../partial/footer.html" -->  
