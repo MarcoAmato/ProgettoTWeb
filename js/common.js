@@ -35,7 +35,8 @@ function fillSelectPiattaforme(selectPiattaforme, piattaformeJson){
     }
     
     for(piattaforma of piattaformeArray){
-        let piattaformaHTML = '<option value="'+ piattaforma.nome +'">'+ piattaforma.nome +'</option>';
+        let nome = (piattaforma.nome).replace(/_/g, " ");
+        let piattaformaHTML = '<option value="'+ piattaforma.nome +'">'+ nome +'</option>';
         selectPiattaforme.append(piattaformaHTML);
     }
 }

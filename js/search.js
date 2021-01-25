@@ -81,18 +81,16 @@ function showSearch(data) {
 
     let indexAnnuncio = 0;
 
-    for (annuncio of jsonAnnunci) { /**
-     * <div class="advert">
-            <div class="advert-image">
-                <img src="../../img/god_of_war.jpeg" alt="">
-            </div>
-            <div class="advert-text">
-                <h2>Dio</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio mollitia earum? Hic magnam est sit suscipit accusamus, fugit minus.</p>
-            </div>
-            <img src="../../img/icons/empty_heart.png" alt="" class="heart">
-        </div>
-     */
+    let piattaforma = getURLParameter("piattaforma");
+    if(piattaforma === "all"){
+        piattaforma = "Tutte le piattaforme";
+    }
+    const nome_raw = getURLParameter("nome");
+    const nome = nome_raw.replace(/_/g, " ");
+    let h1 = "<h1> "+ nome +" - "+ piattaforma +" </h1>";
+    $("#advertisements").append(h1);
+
+    for (annuncio of jsonAnnunci) {
         let divAdvert = '<div class="advert" id="annuncio' + indexAnnuncio + '">';
         if (annuncio.path_immagine !== null) {
             let imgAdvert = '<img src="../../img/advert-img/' + annuncio.path_immagine + '" alt="' + annuncio.titolo + '">';
