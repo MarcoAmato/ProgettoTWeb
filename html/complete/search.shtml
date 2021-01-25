@@ -22,6 +22,6 @@
         <p class="error" id="search-error"></p>
     </div>
 
+<!--#include virtual="../partial/footer.html" -->
     <script src="../../js/search.js"></script>
-<!--#include virtual="../partial/footer.html" -->  
 

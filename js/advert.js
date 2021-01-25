@@ -2,7 +2,7 @@ const advertLoadingErrorMap = new Map();
 
 
 $(function(){
-    let id = getUrlParameter("id");
+    let id = getURLParameter("id");
 
     $.post({
         url: "../../php/advert.php",
@@ -30,7 +30,7 @@ function showAdvert(jsonAnnuncio){
     let htmlAnnuncio = 
     "<h1>"+annuncio.titolo+"</h1>";
     htmlAnnuncio += "<div id='img'>";
-        htmlAnnuncio += "<img src='../../img/advert-img/'"+ annuncio.path_immagine +" alt='"+annuncio.titolo+"'>";
+        htmlAnnuncio += "<img src='../../img/advert-img/"+ annuncio.path_immagine +"' alt='"+annuncio.titolo+"'>";
         htmlAnnuncio += "<p>"+annuncio.testo+"</p>";
         htmlAnnuncio += "<a href='mailto:"+annuncio.email_utente+"'>"+annuncio.email_utente+"</a>";
     htmlAnnuncio += "</div>";

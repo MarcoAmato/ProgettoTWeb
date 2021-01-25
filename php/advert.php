@@ -30,8 +30,9 @@
         exit("query_failed");
     }
 
-    if($result_query_get_annuncio->rowCount() == 1){
-        exit(json_encode($result_query_get_annuncio->fetch()));
+    $annuncio = $result_query_get_annuncio->fetch();
+    if($annuncio){
+        exit(json_encode($annuncio));
     }else{
         exit("annuncio_not_found");
     }
