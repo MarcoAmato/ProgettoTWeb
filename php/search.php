@@ -12,7 +12,19 @@
     }
 
     if(isset($_POST['personal'])){
+        if(!$_POST['personal'] == "true"){
+            exit("personal_wrong_value");
+        }
         $query = getPersonalQuery($db);
+    }else if(isset($_POST['preferiti'])){
+        if(!$_POST['preferiti'] == "true"){
+            exit("preferiti_wrong_value");
+        }
+        session_start();
+        if(!isset($_SESSION['email'])){
+            exit("access_denied");
+        }
+        $query = getAnnunciPreferitiQuery($_SESSION['email']);
     }else{
         //piattaforma, nome
         if(!isset($_POST['piattaforma']) || !isset($_POST['nome'])){
@@ -88,5 +100,14 @@ function getGeneralAnnunciQuery($nome, $piattaforma){
     );";
 
     return $getAnnunciQuery;
+}
+
+function getAnnunciPreferitiQuery($email){
+    $annunci_preferiti_query = 
+    "SELECT a.* FROM preferiti p
+    JOIN annunci a ON p.id_annuncio = a.id
+    AND p.email_utente = '$email'";
+
+    return $annunci_preferiti_query;
 }
 ?>

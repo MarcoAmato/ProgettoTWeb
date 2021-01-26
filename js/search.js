@@ -6,6 +6,7 @@ const idAnnunci = [];
 
 $(function () {
     let personal = getURLParameter("personal");
+    let preferiti = getURLParameter("preferiti");
     let nome = getURLParameter("nome");
     let piattaforma = getURLParameter("piattaforma");
 
@@ -16,6 +17,21 @@ $(function () {
             url: "../../php/autentication.php",
             datatype: "text",
             success: showPersonalSearch,
+            error: function () {
+                showSearch("server_unreachable");
+            }
+        });
+
+        return;
+    }
+
+    if(preferiti === "true"){
+        $("#advertisements").before("<h1> I tuoi annunci preferiti</h1>");
+
+        $.post({
+            url: "../../php/autentication.php",
+            datatype: "text",
+            success: showPreferitiSearch,
             error: function () {
                 showSearch("server_unreachable");
             }
@@ -58,6 +74,24 @@ function showPersonalSearch(autentication) {
             datatype: "json",
             data: {
                 'personal': 'true'
+            },
+            success: showSearch,
+            error: function () {
+                showSearch("server_unreachable");
+            }
+        });
+    }
+}
+
+function showPreferitiSearch(autentication) {
+    if (autentication === null) {
+        window.location.replace("./index.shtml");
+    } else {
+        $.post({
+            url: "../../php/search.php",
+            datatype: "json",
+            data: {
+                'preferiti': 'true'
             },
             success: showSearch,
             error: function () {
