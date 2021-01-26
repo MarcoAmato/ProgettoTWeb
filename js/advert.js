@@ -35,9 +35,14 @@ function showAdvert(jsonAnnuncio){
     let htmlAnnuncio = "";
     htmlAnnuncio += "<div id='img'>";
         htmlAnnuncio += "<img src='../../img/advert-img/"+ annuncio.path_immagine +"' alt='"+annuncio.titolo+"'>";
+    htmlAnnuncio += "</div>";
+    htmlAnnuncio += "<div id='text'>";
+        htmlAnnuncio += "<h2>Testo annuncio</h2>";
         htmlAnnuncio += "<p>"+annuncio.testo+"</p>";
+        htmlAnnuncio += "<h2>Email utente</h2>";
         htmlAnnuncio += "<a href='mailto:"+annuncio.email_utente+"'>"+annuncio.email_utente+"</a>";
     htmlAnnuncio += "</div>";
+    
 
     $("#main").append(htmlAnnuncio);
     //componi html

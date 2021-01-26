@@ -43,7 +43,7 @@
 						<span>Inserisci un annuncio</span>
 					</div>
 				</a>
-				<a href="#">
+				<a href="./search.shtml?preferiti=true">
 					<div class="user-options hide">
 						<img src="../../img/icons/white-heart.png" alt="preferiti">
 						<span>Annunci preferiti</span>
