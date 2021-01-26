@@ -10,7 +10,7 @@ $(function () {
     let piattaforma = getURLParameter("piattaforma");
 
     if (personal === "true") {
-        $("#main").append("<h1> I tuoi annunci </h1>");
+        $("#advertisements").before("<h1> I tuoi annunci </h1>");
 
         $.post({
             url: "../../php/autentication.php",
